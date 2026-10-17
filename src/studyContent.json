@@ -1,0 +1,8460 @@
+{
+ "AES": {
+  "analogy": "A bank vault where the same key locks and unlocks the door — fast, sturdy, and only as safe as whoever holds that one key.",
+  "contrast": {
+   "headline": "Symmetric bulk data encryption",
+   "vs": [
+    {
+     "id": "TLS",
+     "note": "Uses AES for sessions"
+    },
+    {
+     "id": "GCM",
+     "note": "Mode adding authentication"
+    },
+    {
+     "id": "CTM",
+     "note": "Mode making AES streamable"
+    },
+    {
+     "id": "SSH",
+     "note": "Encrypts shells with AES"
+    }
+   ],
+   "edge": "AES is the cipher itself; the others are modes or protocols that use it."
+  },
+  "mnemonic": {
+   "phrase": "Always Encrypt Secrets",
+   "breakdown": [
+    {
+     "letter": "A",
+     "word": "Always"
+    },
+    {
+     "letter": "E",
+     "word": "Encrypt"
+    },
+    {
+     "letter": "S",
+     "word": "Secrets"
+    }
+   ]
+  }
+ },
+ "RSA": {
+  "analogy": "A mailbox with a public slot anyone can drop letters into, but only the owner's private key opens the back door.",
+  "contrast": {
+   "headline": "Asymmetric encryption and signatures",
+   "vs": [
+    {
+     "id": "TLS",
+     "note": "Uses RSA for certificates"
+    }
+   ],
+   "edge": "RSA handles key exchange and signing; TLS is the protocol built around it."
+  },
+  "mnemonic": {
+   "phrase": "Really Secure Arithmetic",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Really"
+    },
+    {
+     "letter": "S",
+     "word": "Secure"
+    },
+    {
+     "letter": "A",
+     "word": "Arithmetic"
+    }
+   ]
+  }
+ },
+ "ECC": {
+  "analogy": "A tiny padlock forged from much harder steel — a 256-bit ECC key guards as well as a 3072-bit RSA brick.",
+  "contrast": {
+   "headline": "Small-key asymmetric cryptography",
+   "vs": [
+    {
+     "id": "RSA",
+     "note": "Larger keys, same job"
+    },
+    {
+     "id": "AES",
+     "note": "Symmetric, not public-key"
+    }
+   ],
+   "edge": "ECC gets RSA-level strength from much smaller keys, ideal for mobile and IoT."
+  },
+  "mnemonic": {
+   "phrase": "Elliptic Curves Compress",
+   "breakdown": [
+    {
+     "letter": "E",
+     "word": "Elliptic"
+    },
+    {
+     "letter": "C",
+     "word": "Curves"
+    },
+    {
+     "letter": "C",
+     "word": "Compress"
+    }
+   ]
+  }
+ },
+ "PKI": {
+  "analogy": "The whole passport system — the issuing office, the photo ID, the border check, and the list of stolen passports.",
+  "contrast": {
+   "headline": "Certificate trust framework",
+   "vs": [
+    {
+     "id": "CA",
+     "note": "Issues the certificates"
+    },
+    {
+     "id": "CRL",
+     "note": "Lists revoked certificates"
+    },
+    {
+     "id": "OCSP",
+     "note": "Live revocation check"
+    },
+    {
+     "id": "TLS",
+     "note": "Consumes PKI certificates"
+    }
+   ],
+   "edge": "PKI is the entire trust system; CA, CRL and OCSP are its parts."
+  },
+  "mnemonic": {
+   "phrase": "Public Keys Infrastructure",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Public"
+    },
+    {
+     "letter": "K",
+     "word": "Keys"
+    },
+    {
+     "letter": "I",
+     "word": "Infrastructure"
+    }
+   ]
+  }
+ },
+ "CA": {
+  "analogy": "The passport office: you trust a stranger's ID only because a government you trust stamped it.",
+  "contrast": {
+   "headline": "Issues and signs certificates",
+   "vs": [
+    {
+     "id": "PKI",
+     "note": "The overall framework"
+    },
+    {
+     "id": "CRL",
+     "note": "CA's revocation list"
+    },
+    {
+     "id": "OCSP",
+     "note": "Real-time revocation answers"
+    },
+    {
+     "id": "PEM",
+     "note": "Format certificates ship in"
+    }
+   ],
+   "edge": "The CA is the trusted signer; the rest are formats and status checks."
+  },
+  "mnemonic": {
+   "phrase": "Certificate Authority",
+   "breakdown": [
+    {
+     "letter": "C",
+     "word": "Certificate"
+    },
+    {
+     "letter": "A",
+     "word": "Authority"
+    }
+   ]
+  }
+ },
+ "CRL": {
+  "analogy": "A bouncer's printed list of banned IDs — reliable, but only as current as the last time it was printed.",
+  "contrast": {
+   "headline": "Published list of revoked certs",
+   "vs": [
+    {
+     "id": "CA",
+     "note": "Publishes the list"
+    },
+    {
+     "id": "PKI",
+     "note": "Framework it belongs to"
+    }
+   ],
+   "edge": "A CRL is a periodic downloadable list; OCSP answers per certificate in real time."
+  },
+  "mnemonic": {
+   "phrase": "Cancelled Revoked Licenses",
+   "breakdown": [
+    {
+     "letter": "C",
+     "word": "Cancelled"
+    },
+    {
+     "letter": "R",
+     "word": "Revoked"
+    },
+    {
+     "letter": "L",
+     "word": "Licenses"
+    }
+   ]
+  }
+ },
+ "OCSP": {
+  "analogy": "Phoning the bank at checkout to ask whether this one card is still valid, instead of reading last week's list.",
+  "contrast": {
+   "headline": "Real-time certificate status check",
+   "vs": [
+    {
+     "id": "CA",
+     "note": "Runs the responder"
+    },
+    {
+     "id": "PKI",
+     "note": "Framework it serves"
+    }
+   ],
+   "edge": "OCSP checks one certificate live; a CRL is a bulk list downloaded periodically."
+  },
+  "mnemonic": {
+   "phrase": "Online Certificate Status Ping",
+   "breakdown": [
+    {
+     "letter": "O",
+     "word": "Online"
+    },
+    {
+     "letter": "C",
+     "word": "Certificate"
+    },
+    {
+     "letter": "S",
+     "word": "Status"
+    },
+    {
+     "letter": "P",
+     "word": "Ping"
+    }
+   ]
+  }
+ },
+ "SHA": {
+  "analogy": "A fingerprint scanner for data — change a single comma and the fingerprint comes out completely different.",
+  "contrast": {
+   "headline": "One-way hash for integrity",
+   "vs": [
+    {
+     "id": "HMAC",
+     "note": "Hash plus secret key"
+    },
+    {
+     "id": "DSA",
+     "note": "Signs SHA digests"
+    }
+   ],
+   "edge": "SHA proves data unchanged, but without a key it cannot prove who sent it."
+  },
+  "mnemonic": {
+   "phrase": "Secure Hash Algorithm",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Secure"
+    },
+    {
+     "letter": "H",
+     "word": "Hash"
+    },
+    {
+     "letter": "A",
+     "word": "Algorithm"
+    }
+   ]
+  }
+ },
+ "HMAC": {
+  "analogy": "A wax seal pressed with a stamp only you and the recipient own — it proves the letter is untouched and came from you.",
+  "contrast": {
+   "headline": "Keyed hash for authenticity",
+   "vs": [
+    {
+     "id": "SHA",
+     "note": "Underlying hash function"
+    },
+    {
+     "id": "GCM",
+     "note": "Also authenticates data"
+    }
+   ],
+   "edge": "HMAC adds a shared secret to a hash, giving integrity plus authenticity."
+  },
+  "mnemonic": {
+   "phrase": "Hash Makes Authenticity Certain",
+   "breakdown": [
+    {
+     "letter": "H",
+     "word": "Hash"
+    },
+    {
+     "letter": "M",
+     "word": "Makes"
+    },
+    {
+     "letter": "A",
+     "word": "Authenticity"
+    },
+    {
+     "letter": "C",
+     "word": "Certain"
+    }
+   ]
+  }
+ },
+ "GCM": {
+  "analogy": "A tamper-evident envelope that both hides the letter and shows if anyone opened it.",
+  "contrast": {
+   "headline": "Authenticated AES encryption mode",
+   "vs": [
+    {
+     "id": "AES",
+     "note": "Cipher it runs on"
+    },
+    {
+     "id": "CTM",
+     "note": "Counter mode it extends"
+    },
+    {
+     "id": "TLS",
+     "note": "Preferred TLS 1.3 mode"
+    },
+    {
+     "id": "HMAC",
+     "note": "Separate integrity method"
+    }
+   ],
+   "edge": "GCM encrypts and authenticates in one pass, unlike plain counter mode."
+  },
+  "mnemonic": {
+   "phrase": "Galois Counter Mode",
+   "breakdown": [
+    {
+     "letter": "G",
+     "word": "Galois"
+    },
+    {
+     "letter": "C",
+     "word": "Counter"
+    },
+    {
+     "letter": "M",
+     "word": "Mode"
+    }
+   ]
+  }
+ },
+ "CTM": {
+  "analogy": "A numbered ticket roll: each ticket number is encrypted into a one-time pad and XORed with your data.",
+  "contrast": {
+   "headline": "Turns block cipher into stream",
+   "vs": [
+    {
+     "id": "AES",
+     "note": "Cipher being run"
+    },
+    {
+     "id": "GCM",
+     "note": "CTR plus authentication"
+    },
+    {
+     "id": "TLS",
+     "note": "Uses CTR via GCM"
+    }
+   ],
+   "edge": "Counter mode encrypts but does not authenticate; GCM adds the authentication."
+  },
+  "mnemonic": {
+   "phrase": "Counter Turns Mode",
+   "breakdown": [
+    {
+     "letter": "C",
+     "word": "Counter"
+    },
+    {
+     "letter": "T",
+     "word": "Turns"
+    },
+    {
+     "letter": "M",
+     "word": "Mode"
+    }
+   ]
+  }
+ },
+ "PEM": {
+  "analogy": "A shipping envelope with a clear 'BEGIN CERTIFICATE' label — the box format, not the contents' security.",
+  "contrast": {
+   "headline": "Base64 certificate file format",
+   "vs": [
+    {
+     "id": "PKI",
+     "note": "Certificates it stores"
+    },
+    {
+     "id": "CA",
+     "note": "Issues what's inside"
+    },
+    {
+     "id": "TLS",
+     "note": "Servers load PEM files"
+    }
+   ],
+   "edge": "PEM is only a text encoding format; it provides no security on its own."
+  },
+  "mnemonic": {
+   "phrase": "Printable Encoded Material",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Printable"
+    },
+    {
+     "letter": "E",
+     "word": "Encoded"
+    },
+    {
+     "letter": "M",
+     "word": "Material"
+    }
+   ]
+  }
+ },
+ "GCMP": {
+  "analogy": "Swapping a good padlock on the Wi-Fi door for a modern one that also flags tampering.",
+  "contrast": {
+   "headline": "WPA3 Wi-Fi encryption protocol",
+   "vs": [
+    {
+     "id": "GCM",
+     "note": "Mode it is built on"
+    },
+    {
+     "id": "AES",
+     "note": "Underlying block cipher"
+    },
+    {
+     "id": "WPA2",
+     "note": "Older, uses CCMP"
+    }
+   ],
+   "edge": "GCMP is GCM applied to Wi-Fi frames in WPA3, replacing WPA2's CCMP."
+  },
+  "mnemonic": {
+   "phrase": "Galois Counter Mode Protocol",
+   "breakdown": [
+    {
+     "letter": "G",
+     "word": "Galois"
+    },
+    {
+     "letter": "C",
+     "word": "Counter"
+    },
+    {
+     "letter": "M",
+     "word": "Mode"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "ECB": {
+  "analogy": "Translating a book word by word with a fixed dictionary — every repeated word looks identical, so patterns shine through.",
+  "contrast": {
+   "headline": "Insecure basic block mode",
+   "vs": [
+    {
+     "id": "AES",
+     "note": "Cipher it misuses"
+    },
+    {
+     "id": "CBC",
+     "note": "Chains blocks to fix"
+    }
+   ],
+   "edge": "ECB encrypts identical blocks identically, leaking patterns; never use it for data."
+  },
+  "mnemonic": {
+   "phrase": "Each Copy Betrays",
+   "breakdown": [
+    {
+     "letter": "E",
+     "word": "Each"
+    },
+    {
+     "letter": "C",
+     "word": "Copy"
+    },
+    {
+     "letter": "B",
+     "word": "Betrays"
+    }
+   ]
+  }
+ },
+ "CBC": {
+  "analogy": "A daisy chain where each link is twisted by the one before it, so identical links never look the same.",
+  "contrast": {
+   "headline": "Chained block encryption mode",
+   "vs": [
+    {
+     "id": "AES",
+     "note": "Cipher it chains"
+    },
+    {
+     "id": "IV",
+     "note": "Seeds the first block"
+    },
+    {
+     "id": "ECB",
+     "note": "Unchained, insecure predecessor"
+    }
+   ],
+   "edge": "CBC hides patterns that ECB leaks, but needs a random IV and is sequential."
+  },
+  "mnemonic": {
+   "phrase": "Chained Blocks Cipher",
+   "breakdown": [
+    {
+     "letter": "C",
+     "word": "Chained"
+    },
+    {
+     "letter": "B",
+     "word": "Blocks"
+    },
+    {
+     "letter": "C",
+     "word": "Cipher"
+    }
+   ]
+  }
+ },
+ "CFB": {
+  "analogy": "A cipher used like a dripping tap: it feeds back its own output to encrypt a stream bit by bit.",
+  "contrast": {
+   "headline": "Self-synchronizing stream mode",
+   "vs": [
+    {
+     "id": "AES",
+     "note": "Underlying block cipher"
+    },
+    {
+     "id": "IV",
+     "note": "Required starting value"
+    }
+   ],
+   "edge": "CFB turns a block cipher into a stream cipher that recovers from lost bits."
+  },
+  "mnemonic": {
+   "phrase": "Cipher Feeds Back",
+   "breakdown": [
+    {
+     "letter": "C",
+     "word": "Cipher"
+    },
+    {
+     "letter": "F",
+     "word": "Feeds"
+    },
+    {
+     "letter": "B",
+     "word": "Back"
+    }
+   ]
+  }
+ },
+ "IV": {
+  "analogy": "Shuffling the deck before every game, so the same hand never deals out the same way twice.",
+  "contrast": {
+   "headline": "Randomizes each encryption",
+   "vs": [
+    {
+     "id": "CBC",
+     "note": "Needs IV first block"
+    },
+    {
+     "id": "CFB",
+     "note": "Needs IV to start"
+    },
+    {
+     "id": "GCM",
+     "note": "Uses a nonce IV"
+    }
+   ],
+   "edge": "An IV is not secret, but it must never repeat with the same key."
+  },
+  "mnemonic": {
+   "phrase": "Initial Value",
+   "breakdown": [
+    {
+     "letter": "I",
+     "word": "Initial"
+    },
+    {
+     "letter": "V",
+     "word": "Value"
+    }
+   ]
+  }
+ },
+ "TPM": {
+  "analogy": "A tiny safe welded onto the motherboard that holds keys and remembers exactly how the computer booted.",
+  "contrast": {
+   "headline": "On-board key and boot integrity",
+   "vs": [
+    {
+     "id": "PKI",
+     "note": "Stores keys and certs"
+    },
+    {
+     "id": "SED",
+     "note": "Unlocks drives with TPM"
+    },
+    {
+     "id": "UEFI",
+     "note": "Measured Secure Boot"
+    }
+   ],
+   "edge": "A TPM is built into one device; an HSM is a dedicated enterprise appliance."
+  },
+  "mnemonic": {
+   "phrase": "Trusted Platform Module",
+   "breakdown": [
+    {
+     "letter": "T",
+     "word": "Trusted"
+    },
+    {
+     "letter": "P",
+     "word": "Platform"
+    },
+    {
+     "letter": "M",
+     "word": "Module"
+    }
+   ]
+  }
+ },
+ "GPG": {
+  "analogy": "The free, open-source edition of the same sealed-envelope service PGP sells.",
+  "contrast": {
+   "headline": "Open-source PGP implementation",
+   "vs": [
+    {
+     "id": "PGP",
+     "note": "Original commercial standard"
+    },
+    {
+     "id": "AES",
+     "note": "Symmetric cipher it uses"
+    }
+   ],
+   "edge": "GPG implements the OpenPGP standard freely; PGP was the original product."
+  },
+  "mnemonic": {
+   "phrase": "GNU Privacy Guard",
+   "breakdown": [
+    {
+     "letter": "G",
+     "word": "GNU"
+    },
+    {
+     "letter": "P",
+     "word": "Privacy"
+    },
+    {
+     "letter": "G",
+     "word": "Guard"
+    }
+   ]
+  }
+ },
+ "PGP": {
+  "analogy": "Sealing a letter with the recipient's padlock and signing it with your personal wax stamp.",
+  "contrast": {
+   "headline": "Email encryption and signing",
+   "vs": [
+    {
+     "id": "GPG",
+     "note": "Free open implementation"
+    },
+    {
+     "id": "PKI",
+     "note": "Web-of-trust alternative"
+    },
+    {
+     "id": "AES",
+     "note": "Encrypts message body"
+    }
+   ],
+   "edge": "PGP uses a web of trust between users instead of central certificate authorities."
+  },
+  "mnemonic": {
+   "phrase": "Pretty Good Privacy",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Pretty"
+    },
+    {
+     "letter": "G",
+     "word": "Good"
+    },
+    {
+     "letter": "P",
+     "word": "Privacy"
+    }
+   ]
+  }
+ },
+ "IKE": {
+  "analogy": "Two diplomats meeting first to agree on a secret language before any real messages are sent.",
+  "contrast": {
+   "headline": "Negotiates IPSec security associations",
+   "vs": [
+    {
+     "id": "PFS",
+     "note": "Fresh keys per session"
+    },
+    {
+     "id": "IPSec",
+     "note": "Tunnel IKE sets up"
+    },
+    {
+     "id": "AES",
+     "note": "Cipher it negotiates"
+    },
+    {
+     "id": "SPD",
+     "note": "Policy deciding what's protected"
+    }
+   ],
+   "edge": "IKE only negotiates keys and SAs; IPSec then protects the actual traffic."
+  },
+  "mnemonic": {
+   "phrase": "Internet Key Exchange",
+   "breakdown": [
+    {
+     "letter": "I",
+     "word": "Internet"
+    },
+    {
+     "letter": "K",
+     "word": "Key"
+    },
+    {
+     "letter": "E",
+     "word": "Exchange"
+    }
+   ]
+  }
+ },
+ "DSA": {
+  "analogy": "A notary stamp: it proves who signed a document but never hides what the document says.",
+  "contrast": {
+   "headline": "Digital signatures only",
+   "vs": [
+    {
+     "id": "PKI",
+     "note": "Certifies signer keys"
+    },
+    {
+     "id": "SHA",
+     "note": "Hash it signs"
+    }
+   ],
+   "edge": "DSA only signs; unlike RSA it cannot be used to encrypt data."
+  },
+  "mnemonic": {
+   "phrase": "Digital Signature Algorithm",
+   "breakdown": [
+    {
+     "letter": "D",
+     "word": "Digital"
+    },
+    {
+     "letter": "S",
+     "word": "Signature"
+    },
+    {
+     "letter": "A",
+     "word": "Algorithm"
+    }
+   ]
+  }
+ },
+ "PFS": {
+  "analogy": "Burning each day's codebook at sunset, so a key stolen tomorrow can't unlock yesterday's mail.",
+  "contrast": {
+   "headline": "Unique key per session",
+   "vs": [
+    {
+     "id": "TLS",
+     "note": "Uses ephemeral key exchange"
+    },
+    {
+     "id": "IKE",
+     "note": "Can enforce PFS"
+    }
+   ],
+   "edge": "PFS uses ephemeral keys, so stealing the server key can't decrypt past sessions."
+  },
+  "mnemonic": {
+   "phrase": "Past Files Survive",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Past"
+    },
+    {
+     "letter": "F",
+     "word": "Files"
+    },
+    {
+     "letter": "S",
+     "word": "Survive"
+    }
+   ]
+  }
+ },
+ "CER": {
+  "analogy": "Tuning a biometric door until it wrongly lets in strangers exactly as often as it wrongly locks out staff.",
+  "contrast": {
+   "headline": "Biometric accuracy balance point",
+   "vs": [
+    {
+     "id": "FRR",
+     "note": "False rejection rate"
+    },
+    {
+     "id": "EER",
+     "note": "Same metric, other name"
+    }
+   ],
+   "edge": "CER is where FAR equals FRR; a lower CER means a more accurate system."
+  },
+  "mnemonic": {
+   "phrase": "Crossover Error Rate",
+   "breakdown": [
+    {
+     "letter": "C",
+     "word": "Crossover"
+    },
+    {
+     "letter": "E",
+     "word": "Error"
+    },
+    {
+     "letter": "R",
+     "word": "Rate"
+    }
+   ]
+  }
+ },
+ "EER": {
+  "analogy": "The same balance point as CER, just under its other name, like 'soda' and 'pop'.",
+  "contrast": {
+   "headline": "Alias for crossover rate",
+   "vs": [
+    {
+     "id": "CER",
+     "note": "Identical metric"
+    }
+   ],
+   "edge": "EER and CER are the same thing: where false accepts equal false rejects."
+  },
+  "mnemonic": {
+   "phrase": "Equal Error Rate",
+   "breakdown": [
+    {
+     "letter": "E",
+     "word": "Equal"
+    },
+    {
+     "letter": "E",
+     "word": "Error"
+    },
+    {
+     "letter": "R",
+     "word": "Rate"
+    }
+   ]
+  }
+ },
+ "HSM": {
+  "analogy": "An armored bank vault for keys — the keys are used inside it and never leave.",
+  "contrast": {
+   "headline": "Dedicated tamper-resistant key hardware",
+   "vs": [
+    {
+     "id": "PKI",
+     "note": "Protects CA root keys"
+    },
+    {
+     "id": "SED",
+     "note": "Drive-level encryption"
+    }
+   ],
+   "edge": "An HSM is a dedicated, tamper-resistant appliance, unlike a TPM built into one device."
+  },
+  "mnemonic": {
+   "phrase": "Hardware Secures Masterkeys",
+   "breakdown": [
+    {
+     "letter": "H",
+     "word": "Hardware"
+    },
+    {
+     "letter": "S",
+     "word": "Secures"
+    },
+    {
+     "letter": "M",
+     "word": "Masterkeys"
+    }
+   ]
+  }
+ },
+ "TLS": {
+  "analogy": "A sealed pneumatic tube between your browser and the server: anyone can see the tube, nobody can read the capsule.",
+  "contrast": {
+   "headline": "Encrypts data in transit",
+   "vs": [
+    {
+     "id": "PKI",
+     "note": "Authenticates the server"
+    },
+    {
+     "id": "AES",
+     "note": "Encrypts session data"
+    },
+    {
+     "id": "RSA",
+     "note": "Signs certificates"
+    },
+    {
+     "id": "CTM",
+     "note": "Mode under AES-GCM"
+    }
+   ],
+   "edge": "TLS is the protocol; AES, RSA and PKI are the building blocks inside it."
+  },
+  "mnemonic": {
+   "phrase": "Transport Locked Securely",
+   "breakdown": [
+    {
+     "letter": "T",
+     "word": "Transport"
+    },
+    {
+     "letter": "L",
+     "word": "Locked"
+    },
+    {
+     "letter": "S",
+     "word": "Securely"
+    }
+   ]
+  }
+ },
+ "HTTPS": {
+  "analogy": "Ordinary web mail, but sent in a locked armored truck instead of on a postcard.",
+  "contrast": {
+   "headline": "Web traffic over TLS",
+   "vs": [
+    {
+     "id": "TLS",
+     "note": "Provides the encryption"
+    },
+    {
+     "id": "PAC",
+     "note": "Proxy auto-config file"
+    },
+    {
+     "id": "L7",
+     "note": "Application layer protocol"
+    },
+    {
+     "id": "API",
+     "note": "Most APIs ride HTTPS"
+    }
+   ],
+   "edge": "HTTPS is just HTTP wrapped in TLS on port 443."
+  },
+  "mnemonic": {
+   "phrase": "Hypertext Travels Through Protected Sockets",
+   "breakdown": [
+    {
+     "letter": "H",
+     "word": "Hypertext"
+    },
+    {
+     "letter": "T",
+     "word": "Travels"
+    },
+    {
+     "letter": "T",
+     "word": "Through"
+    },
+    {
+     "letter": "P",
+     "word": "Protected"
+    },
+    {
+     "letter": "S",
+     "word": "Sockets"
+    }
+   ]
+  }
+ },
+ "SSH": {
+  "analogy": "A private, soundproof phone line to a remote server's command prompt.",
+  "contrast": {
+   "headline": "Encrypted remote shell access",
+   "vs": [
+    {
+     "id": "AES",
+     "note": "Encrypts the session"
+    },
+    {
+     "id": "L7",
+     "note": "Application layer protocol"
+    },
+    {
+     "id": "SCP",
+     "note": "File copy over SSH"
+    },
+    {
+     "id": "SFTP",
+     "note": "File transfer over SSH"
+    }
+   ],
+   "edge": "SSH is the secure tunnel on port 22; SCP and SFTP move files through it."
+  },
+  "mnemonic": {
+   "phrase": "Secure Shell Hop",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Secure"
+    },
+    {
+     "letter": "S",
+     "word": "Shell"
+    },
+    {
+     "letter": "H",
+     "word": "Hop"
+    }
+   ]
+  }
+ },
+ "SMTP": {
+  "analogy": "The postal trucks moving letters between post offices — by default the letters are postcards anyone can read.",
+  "contrast": {
+   "headline": "Server-to-server email delivery",
+   "vs": [
+    {
+     "id": "SMTPS",
+     "note": "SMTP wrapped in TLS"
+    }
+   ],
+   "edge": "Plain SMTP on port 25 is cleartext; SMTPS or STARTTLS adds encryption."
+  },
+  "mnemonic": {
+   "phrase": "Sends Mail To Postoffices",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Sends"
+    },
+    {
+     "letter": "M",
+     "word": "Mail"
+    },
+    {
+     "letter": "T",
+     "word": "To"
+    },
+    {
+     "letter": "P",
+     "word": "Postoffices"
+    }
+   ]
+  }
+ },
+ "RDP": {
+  "analogy": "Sitting at a computer across the world through a window — great for admins, a magnet for attackers if left open.",
+  "contrast": {
+   "headline": "Graphical remote desktop access",
+   "vs": [
+    {
+     "id": "RDS",
+     "note": "Microsoft multi-user RDP service"
+    }
+   ],
+   "edge": "RDP on 3389 should never face the internet; put it behind a VPN or gateway."
+  },
+  "mnemonic": {
+   "phrase": "Remote Desktop Portal",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Remote"
+    },
+    {
+     "letter": "D",
+     "word": "Desktop"
+    },
+    {
+     "letter": "P",
+     "word": "Portal"
+    }
+   ]
+  }
+ },
+ "VPN": {
+  "analogy": "A private underground tunnel running beneath a crowded public road.",
+  "contrast": {
+   "headline": "Encrypted tunnel over untrusted networks",
+   "vs": [
+    {
+     "id": "IPSec",
+     "note": "Network-layer VPN protocol"
+    },
+    {
+     "id": "TLS",
+     "note": "SSL VPN protocol"
+    },
+    {
+     "id": "PAC",
+     "note": "Routes traffic via proxy"
+    },
+    {
+     "id": "L4",
+     "note": "Transport ports it uses"
+    }
+   ],
+   "edge": "A VPN is the tunnel concept; IPSec and TLS are protocols that build it."
+  },
+  "mnemonic": {
+   "phrase": "Very Private Network",
+   "breakdown": [
+    {
+     "letter": "V",
+     "word": "Very"
+    },
+    {
+     "letter": "P",
+     "word": "Private"
+    },
+    {
+     "letter": "N",
+     "word": "Network"
+    }
+   ]
+  }
+ },
+ "IPSec": {
+  "analogy": "Armoring every individual package at the shipping dock, no matter which app packed it.",
+  "contrast": {
+   "headline": "Network-layer encryption suite",
+   "vs": [
+    {
+     "id": "VPN",
+     "note": "Common use case"
+    },
+    {
+     "id": "L3",
+     "note": "Layer it protects"
+    },
+    {
+     "id": "PPTP",
+     "note": "Weak legacy alternative"
+    },
+    {
+     "id": "ESP",
+     "note": "Its encryption protocol"
+    }
+   ],
+   "edge": "IPSec secures every IP packet at Layer 3, unlike TLS which secures one application."
+  },
+  "mnemonic": {
+   "phrase": "Internet Protocol Shielded Encrypted Channel",
+   "breakdown": [
+    {
+     "letter": "I",
+     "word": "Internet"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    },
+    {
+     "letter": "S",
+     "word": "Shielded"
+    },
+    {
+     "letter": "E",
+     "word": "Encrypted"
+    },
+    {
+     "letter": "C",
+     "word": "Channel"
+    }
+   ]
+  }
+ },
+ "IDS": {
+  "analogy": "A security camera with an alarm — it sees the burglar and shouts, but doesn't lock the door.",
+  "contrast": {
+   "headline": "Detects and alerts only",
+   "vs": [
+    {
+     "id": "IPS",
+     "note": "Detects and blocks"
+    },
+    {
+     "id": "SIEM",
+     "note": "Collects its alerts"
+    }
+   ],
+   "edge": "An IDS is passive and only alerts; an IPS sits inline and blocks."
+  },
+  "mnemonic": {
+   "phrase": "Inspects Detects Signals",
+   "breakdown": [
+    {
+     "letter": "I",
+     "word": "Inspects"
+    },
+    {
+     "letter": "D",
+     "word": "Detects"
+    },
+    {
+     "letter": "S",
+     "word": "Signals"
+    }
+   ]
+  }
+ },
+ "IPS": {
+  "analogy": "A security guard standing in the doorway who physically stops anyone suspicious.",
+  "contrast": {
+   "headline": "Inline detection and blocking",
+   "vs": [
+    {
+     "id": "IDS",
+     "note": "Alerts without blocking"
+    },
+    {
+     "id": "NGFW",
+     "note": "Often includes IPS"
+    },
+    {
+     "id": "UTM",
+     "note": "Bundles IPS features"
+    },
+    {
+     "id": "DPI",
+     "note": "Inspection technique it uses"
+    }
+   ],
+   "edge": "An IPS sits inline and blocks traffic; a false positive can block legitimate users."
+  },
+  "mnemonic": {
+   "phrase": "Intercepts Prevents Stops",
+   "breakdown": [
+    {
+     "letter": "I",
+     "word": "Intercepts"
+    },
+    {
+     "letter": "P",
+     "word": "Prevents"
+    },
+    {
+     "letter": "S",
+     "word": "Stops"
+    }
+   ]
+  }
+ },
+ "WAF": {
+  "analogy": "A bouncer who reads every web request word by word and turns away the ones carrying SQL or script tricks.",
+  "contrast": {
+   "headline": "Layer 7 web app filtering",
+   "vs": [
+    {
+     "id": "XSS",
+     "note": "Attack it blocks"
+    },
+    {
+     "id": "SQLi",
+     "note": "Attack it blocks"
+    },
+    {
+     "id": "UTM",
+     "note": "Broader security appliance"
+    },
+    {
+     "id": "CRS",
+     "note": "OWASP rule set"
+    }
+   ],
+   "edge": "A WAF understands HTTP itself, unlike a network firewall that sees only IPs and ports."
+  },
+  "mnemonic": {
+   "phrase": "Web Attack Filter",
+   "breakdown": [
+    {
+     "letter": "W",
+     "word": "Web"
+    },
+    {
+     "letter": "A",
+     "word": "Attack"
+    },
+    {
+     "letter": "F",
+     "word": "Filter"
+    }
+   ]
+  }
+ },
+ "VLAN": {
+  "analogy": "Painting colored lanes on one shared floor so each department's traffic stays in its own lane.",
+  "contrast": {
+   "headline": "Logical Layer 2 segmentation",
+   "vs": [
+    {
+     "id": "DMZ",
+     "note": "Segmented public zone"
+    },
+    {
+     "id": "L2",
+     "note": "Layer it works on"
+    },
+    {
+     "id": "SDN",
+     "note": "Software-defined segmentation"
+    },
+    {
+     "id": "LAN",
+     "note": "Network being divided"
+    }
+   ],
+   "edge": "A VLAN splits one physical switch into isolated broadcast domains."
+  },
+  "mnemonic": {
+   "phrase": "Virtual Lanes Across Network",
+   "breakdown": [
+    {
+     "letter": "V",
+     "word": "Virtual"
+    },
+    {
+     "letter": "L",
+     "word": "Lanes"
+    },
+    {
+     "letter": "A",
+     "word": "Across"
+    },
+    {
+     "letter": "N",
+     "word": "Network"
+    }
+   ]
+  }
+ },
+ "LAN": {
+  "analogy": "The hallways inside one building — everyone nearby, connected without leaving the premises.",
+  "contrast": {
+   "headline": "Single-site local network",
+   "vs": [
+    {
+     "id": "VLAN",
+     "note": "Logical slice of LAN"
+    },
+    {
+     "id": "WLAN",
+     "note": "Wireless LAN"
+    },
+    {
+     "id": "WAN",
+     "note": "Spans long distances"
+    },
+    {
+     "id": "MAN",
+     "note": "City-wide network"
+    }
+   ],
+   "edge": "A LAN covers one site; MAN covers a city and WAN spans regions."
+  },
+  "mnemonic": {
+   "phrase": "Local Area Network",
+   "breakdown": [
+    {
+     "letter": "L",
+     "word": "Local"
+    },
+    {
+     "letter": "A",
+     "word": "Area"
+    },
+    {
+     "letter": "N",
+     "word": "Network"
+    }
+   ]
+  }
+ },
+ "WAN": {
+  "analogy": "The highway system connecting cities — the internet is the biggest highway network of all.",
+  "contrast": {
+   "headline": "Long-distance network links",
+   "vs": [
+    {
+     "id": "SVC",
+     "note": "On-demand virtual circuit"
+    },
+    {
+     "id": "LAN",
+     "note": "Local, single site"
+    },
+    {
+     "id": "MAN",
+     "note": "City-sized network"
+    },
+    {
+     "id": "FW",
+     "note": "Guards WAN edge"
+    }
+   ],
+   "edge": "A WAN links distant sites, usually over carrier or internet connections."
+  },
+  "mnemonic": {
+   "phrase": "Wide Area Network",
+   "breakdown": [
+    {
+     "letter": "W",
+     "word": "Wide"
+    },
+    {
+     "letter": "A",
+     "word": "Area"
+    },
+    {
+     "letter": "N",
+     "word": "Network"
+    }
+   ]
+  }
+ },
+ "WLAN": {
+  "analogy": "The same office hallways, but you walk them through the air instead of along cables.",
+  "contrast": {
+   "headline": "Wi-Fi local network",
+   "vs": [
+    {
+     "id": "LAN",
+     "note": "Wired counterpart"
+    },
+    {
+     "id": "WPA2",
+     "note": "Secures WLAN traffic"
+    }
+   ],
+   "edge": "A WLAN is a LAN over 802.11 radio, so it needs WPA2 or WPA3 protection."
+  },
+  "mnemonic": {
+   "phrase": "Wireless Local Area Network",
+   "breakdown": [
+    {
+     "letter": "W",
+     "word": "Wireless"
+    },
+    {
+     "letter": "L",
+     "word": "Local"
+    },
+    {
+     "letter": "A",
+     "word": "Area"
+    },
+    {
+     "letter": "N",
+     "word": "Network"
+    }
+   ]
+  }
+ },
+ "MAN": {
+  "analogy": "A city's subway system — bigger than one building, smaller than the national railway.",
+  "contrast": {
+   "headline": "City-wide network",
+   "vs": [
+    {
+     "id": "WAN",
+     "note": "Larger than MAN"
+    },
+    {
+     "id": "LAN",
+     "note": "Smaller than MAN"
+    }
+   ],
+   "edge": "A MAN sits between LAN and WAN, covering a campus or city."
+  },
+  "mnemonic": {
+   "phrase": "Metropolitan Area Network",
+   "breakdown": [
+    {
+     "letter": "M",
+     "word": "Metropolitan"
+    },
+    {
+     "letter": "A",
+     "word": "Area"
+    },
+    {
+     "letter": "N",
+     "word": "Network"
+    }
+   ]
+  }
+ },
+ "PAN": {
+  "analogy": "The invisible bubble around you where your phone, earbuds and watch talk to each other.",
+  "contrast": {
+   "headline": "Personal short-range network",
+   "vs": [
+    {
+     "id": "LAN",
+     "note": "Larger, building-scale network"
+    }
+   ],
+   "edge": "A PAN covers a few meters around one person, typically Bluetooth or NFC."
+  },
+  "mnemonic": {
+   "phrase": "Personal Area Network",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Personal"
+    },
+    {
+     "letter": "A",
+     "word": "Area"
+    },
+    {
+     "letter": "N",
+     "word": "Network"
+    }
+   ]
+  }
+ },
+ "FW": {
+  "analogy": "A border checkpoint that checks every vehicle's papers against a rulebook before letting it through.",
+  "contrast": {
+   "headline": "Rule-based traffic filtering",
+   "vs": [
+    {
+     "id": "ACL",
+     "note": "Rules it enforces"
+    },
+    {
+     "id": "NGFW",
+     "note": "App-aware firewall"
+    },
+    {
+     "id": "WAN",
+     "note": "Edge it guards"
+    }
+   ],
+   "edge": "A basic firewall filters by IP, port and protocol; an NGFW also understands applications."
+  },
+  "mnemonic": {
+   "phrase": "Forbids Wrongdoers",
+   "breakdown": [
+    {
+     "letter": "F",
+     "word": "Forbids"
+    },
+    {
+     "letter": "W",
+     "word": "Wrongdoers"
+    }
+   ]
+  }
+ },
+ "DNSSEC": {
+  "analogy": "A notarized phone book, where every entry carries a signature proving nobody forged the number.",
+  "contrast": {
+   "headline": "Signed, authenticated DNS records",
+   "vs": [
+    {
+     "id": "DDNS",
+     "note": "Dynamically updated DNS"
+    },
+    {
+     "id": "DNS",
+     "note": "Unsigned base protocol"
+    }
+   ],
+   "edge": "DNSSEC proves DNS answers are authentic but does not encrypt them."
+  },
+  "mnemonic": {
+   "phrase": "Domain Names Signed Securely Each Certificate",
+   "breakdown": [
+    {
+     "letter": "D",
+     "word": "Domain"
+    },
+    {
+     "letter": "N",
+     "word": "Names"
+    },
+    {
+     "letter": "S",
+     "word": "Signed"
+    },
+    {
+     "letter": "S",
+     "word": "Securely"
+    },
+    {
+     "letter": "E",
+     "word": "Each"
+    },
+    {
+     "letter": "C",
+     "word": "Certificate"
+    }
+   ]
+  }
+ },
+ "DDNS": {
+  "analogy": "A phone book that updates itself whenever you move to a new apartment.",
+  "contrast": {
+   "headline": "Auto-updated DNS records",
+   "vs": [
+    {
+     "id": "DNSSEC",
+     "note": "Signs DNS records"
+    },
+    {
+     "id": "DHCP",
+     "note": "Assigns changing IPs"
+    }
+   ],
+   "edge": "DDNS keeps a name pointing at an IP that changes, often after DHCP renewals."
+  },
+  "mnemonic": {
+   "phrase": "Dynamic Domain Name System",
+   "breakdown": [
+    {
+     "letter": "D",
+     "word": "Dynamic"
+    },
+    {
+     "letter": "D",
+     "word": "Domain"
+    },
+    {
+     "letter": "N",
+     "word": "Name"
+    },
+    {
+     "letter": "S",
+     "word": "System"
+    }
+   ]
+  }
+ },
+ "DHCP": {
+  "analogy": "A hotel front desk handing every arriving guest a room number, a map, and a checkout time.",
+  "contrast": {
+   "headline": "Automatic IP address assignment",
+   "vs": [
+    {
+     "id": "DDNS",
+     "note": "Updates DNS on change"
+    }
+   ],
+   "edge": "DHCP hands out IP settings; a rogue DHCP server can redirect a whole network."
+  },
+  "mnemonic": {
+   "phrase": "Device Hands Configuration Promptly",
+   "breakdown": [
+    {
+     "letter": "D",
+     "word": "Device"
+    },
+    {
+     "letter": "H",
+     "word": "Hands"
+    },
+    {
+     "letter": "C",
+     "word": "Configuration"
+    },
+    {
+     "letter": "P",
+     "word": "Promptly"
+    }
+   ]
+  }
+ },
+ "PAC": {
+  "analogy": "A small note taped inside the browser telling it which side door to use for each address.",
+  "contrast": {
+   "headline": "Browser proxy routing script",
+   "vs": [
+    {
+     "id": "VPN",
+     "note": "Tunnels all traffic"
+    },
+    {
+     "id": "HTTPS",
+     "note": "Traffic it routes"
+    }
+   ],
+   "edge": "A PAC file only picks a proxy per URL; it encrypts nothing itself."
+  },
+  "mnemonic": {
+   "phrase": "Proxy Assignment Chooser",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Proxy"
+    },
+    {
+     "letter": "A",
+     "word": "Assignment"
+    },
+    {
+     "letter": "C",
+     "word": "Chooser"
+    }
+   ]
+  }
+ },
+ "WEP": {
+  "analogy": "A screen door on a bank vault — it looks like a lock, but anyone can push through in minutes.",
+  "contrast": {
+   "headline": "Broken original Wi-Fi encryption",
+   "vs": [
+    {
+     "id": "WPA",
+     "note": "Its interim replacement"
+    }
+   ],
+   "edge": "WEP's reused IVs make it crackable in minutes; never deploy it."
+  },
+  "mnemonic": {
+   "phrase": "Weak Encryption Protocol",
+   "breakdown": [
+    {
+     "letter": "W",
+     "word": "Weak"
+    },
+    {
+     "letter": "E",
+     "word": "Encryption"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "WPA": {
+  "analogy": "A quick patch on WEP's broken lock while the proper door was still being built.",
+  "contrast": {
+   "headline": "Interim TKIP Wi-Fi fix",
+   "vs": [
+    {
+     "id": "WEP",
+     "note": "Broken predecessor"
+    },
+    {
+     "id": "WPA2",
+     "note": "AES-based successor"
+    }
+   ],
+   "edge": "WPA used TKIP as a stopgap; WPA2 brought proper AES encryption."
+  },
+  "mnemonic": {
+   "phrase": "Wireless Patch Attempt",
+   "breakdown": [
+    {
+     "letter": "W",
+     "word": "Wireless"
+    },
+    {
+     "letter": "P",
+     "word": "Patch"
+    },
+    {
+     "letter": "A",
+     "word": "Attempt"
+    }
+   ]
+  }
+ },
+ "WPA2": {
+  "analogy": "A solid deadbolt for Wi-Fi — strong, unless the shared password is weak enough to guess.",
+  "contrast": {
+   "headline": "AES-CCMP Wi-Fi security",
+   "vs": [
+    {
+     "id": "WPA",
+     "note": "TKIP-based predecessor"
+    },
+    {
+     "id": "AES",
+     "note": "Cipher behind CCMP"
+    },
+    {
+     "id": "WPS",
+     "note": "Weak pairing shortcut"
+    },
+    {
+     "id": "L2",
+     "note": "Layer it protects"
+    }
+   ],
+   "edge": "WPA2-Personal falls to offline password guessing; WPA3's SAE fixes that."
+  },
+  "mnemonic": {
+   "phrase": "Wireless Protected Access 2",
+   "breakdown": [
+    {
+     "letter": "W",
+     "word": "Wireless"
+    },
+    {
+     "letter": "P",
+     "word": "Protected"
+    },
+    {
+     "letter": "A",
+     "word": "Access"
+    },
+    {
+     "letter": "2",
+     "word": "2"
+    }
+   ]
+  }
+ },
+ "WPS": {
+  "analogy": "A spare key hidden under the doormat with only an eight-digit lock on the box.",
+  "contrast": {
+   "headline": "Convenient but brute-forceable pairing",
+   "vs": [
+    {
+     "id": "WPA2",
+     "note": "Network it weakens"
+    }
+   ],
+   "edge": "WPS PINs are checked in two halves, so brute force takes only hours; disable it."
+  },
+  "mnemonic": {
+   "phrase": "Weak Pin Setup",
+   "breakdown": [
+    {
+     "letter": "W",
+     "word": "Weak"
+    },
+    {
+     "letter": "P",
+     "word": "Pin"
+    },
+    {
+     "letter": "S",
+     "word": "Setup"
+    }
+   ]
+  }
+ },
+ "TCP": {
+  "analogy": "Registered mail: numbered, signed for, and resent if it gets lost.",
+  "contrast": {
+   "headline": "Reliable connection-oriented transport",
+   "vs": [
+    {
+     "id": "L4",
+     "note": "Transport layer"
+    },
+    {
+     "id": "UDP",
+     "note": "Fast, connectionless alternative"
+    }
+   ],
+   "edge": "TCP guarantees ordered delivery through a 3-way handshake; UDP skips all that."
+  },
+  "mnemonic": {
+   "phrase": "Three-way Connection Protocol",
+   "breakdown": [
+    {
+     "letter": "T",
+     "word": "Three-way"
+    },
+    {
+     "letter": "C",
+     "word": "Connection"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "UDP": {
+  "analogy": "Shouting announcements across a stadium — fast, but nobody confirms they heard you.",
+  "contrast": {
+   "headline": "Fast connectionless transport",
+   "vs": [
+    {
+     "id": "L4",
+     "note": "Transport layer"
+    },
+    {
+     "id": "TCP",
+     "note": "Reliable, slower alternative"
+    },
+    {
+     "id": "TFTP",
+     "note": "Runs over UDP"
+    }
+   ],
+   "edge": "UDP has no handshake or retransmission, ideal for DNS, VoIP and streaming."
+  },
+  "mnemonic": {
+   "phrase": "Unreliable Datagram Protocol",
+   "breakdown": [
+    {
+     "letter": "U",
+     "word": "Unreliable"
+    },
+    {
+     "letter": "D",
+     "word": "Datagram"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "DNS": {
+  "analogy": "The internet's phone book, turning names you remember into numbers machines dial.",
+  "contrast": {
+   "headline": "Translates names to IPs",
+   "vs": [
+    {
+     "id": "L7",
+     "note": "Application layer service"
+    },
+    {
+     "id": "DNSSEC",
+     "note": "Signs DNS answers"
+    },
+    {
+     "id": "DKIM",
+     "note": "Keys published in DNS"
+    },
+    {
+     "id": "SPF",
+     "note": "Policy published in DNS"
+    }
+   ],
+   "edge": "Plain DNS is unauthenticated, which is why poisoning works and DNSSEC exists."
+  },
+  "mnemonic": {
+   "phrase": "Domain Name Service",
+   "breakdown": [
+    {
+     "letter": "D",
+     "word": "Domain"
+    },
+    {
+     "letter": "N",
+     "word": "Name"
+    },
+    {
+     "letter": "S",
+     "word": "Service"
+    }
+   ]
+  }
+ },
+ "SCP": {
+  "analogy": "Handing a box through the secure SSH tunnel instead of throwing it over the fence.",
+  "contrast": {
+   "headline": "File copy over SSH",
+   "vs": [
+    {
+     "id": "L7",
+     "note": "Application layer"
+    },
+    {
+     "id": "SSH",
+     "note": "Tunnel it rides"
+    }
+   ],
+   "edge": "SCP copies files over SSH but, unlike SFTP, cannot browse or resume."
+  },
+  "mnemonic": {
+   "phrase": "Secure Copy Protocol",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Secure"
+    },
+    {
+     "letter": "C",
+     "word": "Copy"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "RAS": {
+  "analogy": "The old dial-up back door into the office network, from before VPNs became standard.",
+  "contrast": {
+   "headline": "Legacy remote network access",
+   "vs": [
+    {
+     "id": "VPN",
+     "note": "Modern encrypted replacement"
+    }
+   ],
+   "edge": "RAS is the legacy dial-in concept; VPNs replaced it with encrypted internet tunnels."
+  },
+  "mnemonic": {
+   "phrase": "Remote Access Service",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Remote"
+    },
+    {
+     "letter": "A",
+     "word": "Access"
+    },
+    {
+     "letter": "S",
+     "word": "Service"
+    }
+   ]
+  }
+ },
+ "TTLS": {
+  "analogy": "Building a secure tunnel to the gatekeeper first, then whispering your password inside it.",
+  "contrast": {
+   "headline": "Tunneled EAP authentication method",
+   "vs": [
+    {
+     "id": "L6",
+     "note": "Presentation layer"
+    },
+    {
+     "id": "TLS",
+     "note": "Builds the outer tunnel"
+    },
+    {
+     "id": "RADIUS",
+     "note": "Server validating credentials"
+    },
+    {
+     "id": "EAP",
+     "note": "Framework it extends"
+    }
+   ],
+   "edge": "EAP-TTLS needs only a server certificate, unlike EAP-TLS which needs client certificates too."
+  },
+  "mnemonic": {
+   "phrase": "Tunnel Then Login Securely",
+   "breakdown": [
+    {
+     "letter": "T",
+     "word": "Tunnel"
+    },
+    {
+     "letter": "T",
+     "word": "Then"
+    },
+    {
+     "letter": "L",
+     "word": "Login"
+    },
+    {
+     "letter": "S",
+     "word": "Securely"
+    }
+   ]
+  }
+ },
+ "PPTP": {
+  "analogy": "A tunnel built from cardboard: still standing, but it collapses the moment anyone pushes.",
+  "contrast": {
+   "headline": "Obsolete insecure VPN protocol",
+   "vs": [
+    {
+     "id": "L5",
+     "note": "Session layer"
+    },
+    {
+     "id": "VPN",
+     "note": "Purpose it served"
+    },
+    {
+     "id": "IPSec",
+     "note": "Secure modern replacement"
+    }
+   ],
+   "edge": "PPTP's MS-CHAPv2 authentication is broken; replace it with IPSec or TLS VPNs."
+  },
+  "mnemonic": {
+   "phrase": "Particularly Poor Tunneling Protocol",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Particularly"
+    },
+    {
+     "letter": "P",
+     "word": "Poor"
+    },
+    {
+     "letter": "T",
+     "word": "Tunneling"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "NetBIOS": {
+  "analogy": "Shouting names down an old office corridor to find colleagues — chatty and easy to eavesdrop on.",
+  "contrast": {
+   "headline": "Legacy Windows name service",
+   "vs": [
+    {
+     "id": "L5",
+     "note": "Session layer"
+    },
+    {
+     "id": "LDAP",
+     "note": "Modern directory lookups"
+    }
+   ],
+   "edge": "NetBIOS leaks host and share information; disable it where not needed."
+  },
+  "mnemonic": {
+   "phrase": "Network eavesdroppers Track Broadcasts In Old Systems",
+   "breakdown": [
+    {
+     "letter": "N",
+     "word": "Network"
+    },
+    {
+     "letter": "E",
+     "word": "eavesdroppers"
+    },
+    {
+     "letter": "T",
+     "word": "Track"
+    },
+    {
+     "letter": "B",
+     "word": "Broadcasts"
+    },
+    {
+     "letter": "I",
+     "word": "In"
+    },
+    {
+     "letter": "O",
+     "word": "Old"
+    },
+    {
+     "letter": "S",
+     "word": "Systems"
+    }
+   ]
+  }
+ },
+ "RPC": {
+  "analogy": "Calling a coworker and asking them to run a task on their desk as if it were yours.",
+  "contrast": {
+   "headline": "Executes procedures on remote hosts",
+   "vs": [
+    {
+     "id": "L5",
+     "note": "Session layer"
+    },
+    {
+     "id": "C2",
+     "note": "Attackers abuse RPC"
+    }
+   ],
+   "edge": "RPC lets programs call code remotely, a frequent lateral movement path."
+  },
+  "mnemonic": {
+   "phrase": "Run Program Commands",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Run"
+    },
+    {
+     "letter": "P",
+     "word": "Program"
+    },
+    {
+     "letter": "C",
+     "word": "Commands"
+    }
+   ]
+  }
+ },
+ "API": {
+  "analogy": "A restaurant menu and waiter: you order through the counter, never walking into the kitchen.",
+  "contrast": {
+   "headline": "Programmatic interface between systems",
+   "vs": [
+    {
+     "id": "L7",
+     "note": "Application layer"
+    },
+    {
+     "id": "HTTPS",
+     "note": "Usual API transport"
+    },
+    {
+     "id": "OAuth",
+     "note": "Delegates API access"
+    },
+    {
+     "id": "WAF",
+     "note": "Protects API endpoints"
+    }
+   ],
+   "edge": "An API exposes functions to other programs, so it needs authentication and rate limits."
+  },
+  "mnemonic": {
+   "phrase": "Apps Pass Information",
+   "breakdown": [
+    {
+     "letter": "A",
+     "word": "Apps"
+    },
+    {
+     "letter": "P",
+     "word": "Pass"
+    },
+    {
+     "letter": "I",
+     "word": "Information"
+    }
+   ]
+  }
+ },
+ "ICMP": {
+  "analogy": "The network's radar ping and error notes — 'are you there?' and 'can't get there from here'.",
+  "contrast": {
+   "headline": "Diagnostics and error messages",
+   "vs": [
+    {
+     "id": "L3",
+     "note": "Network layer"
+    },
+    {
+     "id": "DDoS",
+     "note": "Ping floods abuse it"
+    }
+   ],
+   "edge": "ICMP powers ping and traceroute but can be abused for floods and reconnaissance."
+  },
+  "mnemonic": {
+   "phrase": "Internet Checks Messages Promptly",
+   "breakdown": [
+    {
+     "letter": "I",
+     "word": "Internet"
+    },
+    {
+     "letter": "C",
+     "word": "Checks"
+    },
+    {
+     "letter": "M",
+     "word": "Messages"
+    },
+    {
+     "letter": "P",
+     "word": "Promptly"
+    }
+   ]
+  }
+ },
+ "NAT": {
+  "analogy": "A company switchboard: outsiders see one main number, never the extensions behind it.",
+  "contrast": {
+   "headline": "Maps private IPs to public",
+   "vs": [
+    {
+     "id": "L3",
+     "note": "Network layer"
+    },
+    {
+     "id": "PAT",
+     "note": "Many-to-one with ports"
+    }
+   ],
+   "edge": "NAT conserves IPv4 addresses and hides internal hosts, but it is not a firewall."
+  },
+  "mnemonic": {
+   "phrase": "Network Address Translation",
+   "breakdown": [
+    {
+     "letter": "N",
+     "word": "Network"
+    },
+    {
+     "letter": "A",
+     "word": "Address"
+    },
+    {
+     "letter": "T",
+     "word": "Translation"
+    }
+   ]
+  }
+ },
+ "PAT": {
+  "analogy": "One apartment building address, with each resident's mail sorted by apartment number.",
+  "contrast": {
+   "headline": "Many hosts, one IP",
+   "vs": [
+    {
+     "id": "NAT",
+     "note": "Parent concept"
+    },
+    {
+     "id": "L3",
+     "note": "Network layer"
+    }
+   ],
+   "edge": "PAT tracks sessions by port number so many hosts share one public IP."
+  },
+  "mnemonic": {
+   "phrase": "Ports Allow Translation",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Ports"
+    },
+    {
+     "letter": "A",
+     "word": "Allow"
+    },
+    {
+     "letter": "T",
+     "word": "Translation"
+    }
+   ]
+  }
+ },
+ "SFTP": {
+  "analogy": "A full file-cabinet service delivered through the SSH tunnel — browse, upload, rename, resume.",
+  "contrast": {
+   "headline": "Full file transfer over SSH",
+   "vs": [
+    {
+     "id": "SSH",
+     "note": "Tunnel on port 22"
+    },
+    {
+     "id": "FTP",
+     "note": "Insecure ancestor"
+    },
+    {
+     "id": "FTPS",
+     "note": "FTP plus TLS"
+    }
+   ],
+   "edge": "SFTP is an SSH subsystem on port 22, unrelated to FTP despite the name."
+  },
+  "mnemonic": {
+   "phrase": "Secure File Transfer Protocol",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Secure"
+    },
+    {
+     "letter": "F",
+     "word": "File"
+    },
+    {
+     "letter": "T",
+     "word": "Transfer"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "FTP": {
+  "analogy": "Mailing your files and your password on postcards for every mail carrier to read.",
+  "contrast": {
+   "headline": "Cleartext file transfer",
+   "vs": [
+    {
+     "id": "L7",
+     "note": "Application layer"
+    },
+    {
+     "id": "SFTP",
+     "note": "SSH-based replacement"
+    },
+    {
+     "id": "FTPS",
+     "note": "TLS-wrapped FTP"
+    }
+   ],
+   "edge": "FTP on 20/21 sends credentials in cleartext; replace it with SFTP or FTPS."
+  },
+  "mnemonic": {
+   "phrase": "Files Travel Plainly",
+   "breakdown": [
+    {
+     "letter": "F",
+     "word": "Files"
+    },
+    {
+     "letter": "T",
+     "word": "Travel"
+    },
+    {
+     "letter": "P",
+     "word": "Plainly"
+    }
+   ]
+  }
+ },
+ "FTPS": {
+  "analogy": "The same old FTP postcards, now sealed in TLS envelopes.",
+  "contrast": {
+   "headline": "FTP secured with TLS",
+   "vs": [
+    {
+     "id": "TLS",
+     "note": "Adds the encryption"
+    },
+    {
+     "id": "FTP",
+     "note": "Protocol it wraps"
+    },
+    {
+     "id": "SFTP",
+     "note": "SSH-based alternative"
+    }
+   ],
+   "edge": "FTPS is FTP over TLS with separate data channels; SFTP is a different, SSH-based protocol."
+  },
+  "mnemonic": {
+   "phrase": "FTP Traveling Protected Securely",
+   "breakdown": [
+    {
+     "letter": "F",
+     "word": "FTP"
+    },
+    {
+     "letter": "T",
+     "word": "Traveling"
+    },
+    {
+     "letter": "P",
+     "word": "Protected"
+    },
+    {
+     "letter": "S",
+     "word": "Securely"
+    }
+   ]
+  }
+ },
+ "BGP": {
+  "analogy": "The internet's postal agreements between countries — whoever announces a route is mostly trusted.",
+  "contrast": {
+   "headline": "Routes between autonomous systems",
+   "vs": [
+    {
+     "id": "L3",
+     "note": "Network layer"
+    },
+    {
+     "id": "VLAN",
+     "note": "Local segmentation, not routing"
+    }
+   ],
+   "edge": "BGP trusts route announcements, so hijacks can reroute whole networks' traffic."
+  },
+  "mnemonic": {
+   "phrase": "Borders Gateway Promises",
+   "breakdown": [
+    {
+     "letter": "B",
+     "word": "Borders"
+    },
+    {
+     "letter": "G",
+     "word": "Gateway"
+    },
+    {
+     "letter": "P",
+     "word": "Promises"
+    }
+   ]
+  }
+ },
+ "L2TP": {
+  "analogy": "An empty armored-truck chassis: it carries cargo, but you must add IPSec for the armor.",
+  "contrast": {
+   "headline": "Tunneling without built-in encryption",
+   "vs": [
+    {
+     "id": "IPSec",
+     "note": "Supplies the encryption"
+    },
+    {
+     "id": "VPN",
+     "note": "Common use case"
+    },
+    {
+     "id": "L2",
+     "note": "Frames it tunnels"
+    }
+   ],
+   "edge": "L2TP only tunnels; security comes entirely from pairing it with IPSec."
+  },
+  "mnemonic": {
+   "phrase": "Layer 2 Tunneling Protocol",
+   "breakdown": [
+    {
+     "letter": "L",
+     "word": "Layer"
+    },
+    {
+     "letter": "2",
+     "word": "2"
+    },
+    {
+     "letter": "T",
+     "word": "Tunneling"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "SMTPS": {
+  "analogy": "The same mail trucks between post offices, now with the cargo locked in TLS boxes.",
+  "contrast": {
+   "headline": "Email delivery over TLS",
+   "vs": [
+    {
+     "id": "TLS",
+     "note": "Provides the encryption"
+    },
+    {
+     "id": "L7",
+     "note": "Application layer"
+    },
+    {
+     "id": "SMTP",
+     "note": "Unencrypted base protocol"
+    }
+   ],
+   "edge": "SMTPS encrypts mail between hops, typically implicit TLS on port 465."
+  },
+  "mnemonic": {
+   "phrase": "Secure Mail Travels Protected Safely",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Secure"
+    },
+    {
+     "letter": "M",
+     "word": "Mail"
+    },
+    {
+     "letter": "T",
+     "word": "Travels"
+    },
+    {
+     "letter": "P",
+     "word": "Protected"
+    },
+    {
+     "letter": "S",
+     "word": "Safely"
+    }
+   ]
+  }
+ },
+ "NTP": {
+  "analogy": "The town clock everyone sets their watch by — if it's wrong, logs and Kerberos tickets break.",
+  "contrast": {
+   "headline": "Synchronizes device clocks",
+   "vs": [
+    {
+     "id": "L7",
+     "note": "Application layer"
+    },
+    {
+     "id": "Kerberos",
+     "note": "Fails with clock skew"
+    }
+   ],
+   "edge": "Accurate time keeps logs correlatable and Kerberos working within its five-minute skew."
+  },
+  "mnemonic": {
+   "phrase": "Network Time Protocol",
+   "breakdown": [
+    {
+     "letter": "N",
+     "word": "Network"
+    },
+    {
+     "letter": "T",
+     "word": "Time"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "SNMP": {
+  "analogy": "A building manager's clipboard checking every thermostat and meter remotely — old versions leave the clipboard on the lobby counter.",
+  "contrast": {
+   "headline": "Network device monitoring",
+   "vs": [
+    {
+     "id": "L7",
+     "note": "Application layer"
+    },
+    {
+     "id": "OID",
+     "note": "Address of each value"
+    },
+    {
+     "id": "MIB",
+     "note": "Database of values"
+    },
+    {
+     "id": "NMS",
+     "note": "Console that polls"
+    }
+   ],
+   "edge": "SNMPv1 and v2c use cleartext community strings; SNMPv3 adds authentication and encryption."
+  },
+  "mnemonic": {
+   "phrase": "Simple Network Monitoring Protocol",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Simple"
+    },
+    {
+     "letter": "N",
+     "word": "Network"
+    },
+    {
+     "letter": "M",
+     "word": "Monitoring"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "NNTP": {
+  "analogy": "The courier service for old internet bulletin boards called Usenet newsgroups.",
+  "contrast": {
+   "headline": "Usenet article transfer",
+   "vs": [
+    {
+     "id": "L7",
+     "note": "Application layer"
+    }
+   ],
+   "edge": "NNTP on port 119 carries Usenet articles; it is largely legacy today."
+  },
+  "mnemonic": {
+   "phrase": "News Network Transfer Protocol",
+   "breakdown": [
+    {
+     "letter": "N",
+     "word": "News"
+    },
+    {
+     "letter": "N",
+     "word": "Network"
+    },
+    {
+     "letter": "T",
+     "word": "Transfer"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "TFTP": {
+  "analogy": "A loading dock with no ID check, used to drop boot files onto devices quickly.",
+  "contrast": {
+   "headline": "Unauthenticated lightweight file transfer",
+   "vs": [
+    {
+     "id": "UDP",
+     "note": "Transport on port 69"
+    },
+    {
+     "id": "L7",
+     "note": "Application layer"
+    }
+   ],
+   "edge": "TFTP has no authentication at all; keep it on isolated management networks."
+  },
+  "mnemonic": {
+   "phrase": "Tiny File Transfer Protocol",
+   "breakdown": [
+    {
+     "letter": "T",
+     "word": "Tiny"
+    },
+    {
+     "letter": "F",
+     "word": "File"
+    },
+    {
+     "letter": "T",
+     "word": "Transfer"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "RDS": {
+  "analogy": "A hotel of remote desktops, where many users check into their own sessions on one server.",
+  "contrast": {
+   "headline": "Microsoft multi-user remote desktops",
+   "vs": [
+    {
+     "id": "RDP",
+     "note": "Protocol RDS uses"
+    }
+   ],
+   "edge": "RDS is the Windows service hosting sessions; RDP is the protocol carrying them."
+  },
+  "mnemonic": {
+   "phrase": "Remote Desktop Services",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Remote"
+    },
+    {
+     "letter": "D",
+     "word": "Desktop"
+    },
+    {
+     "letter": "S",
+     "word": "Services"
+    }
+   ]
+  }
+ },
+ "SOAP": {
+  "analogy": "Sending a formal letter in a strict XML envelope with every field filled out.",
+  "contrast": {
+   "headline": "XML web service messaging",
+   "vs": [
+    {
+     "id": "API",
+     "note": "Style of API"
+    },
+    {
+     "id": "L7",
+     "note": "Application layer"
+    }
+   ],
+   "edge": "SOAP is a rigid XML standard with built-in WS-Security, unlike lightweight REST."
+  },
+  "mnemonic": {
+   "phrase": "Strict Object Access Protocol",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Strict"
+    },
+    {
+     "letter": "O",
+     "word": "Object"
+    },
+    {
+     "letter": "A",
+     "word": "Access"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "SVC": {
+  "analogy": "Calling a taxi when you need a ride, instead of keeping a private driver on salary.",
+  "contrast": {
+   "headline": "On-demand temporary WAN circuit",
+   "vs": [
+    {
+     "id": "WAN",
+     "note": "Network it connects"
+    }
+   ],
+   "edge": "An SVC is built per session; a PVC stays permanently provisioned."
+  },
+  "mnemonic": {
+   "phrase": "Switched Virtual Circuit",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Switched"
+    },
+    {
+     "letter": "V",
+     "word": "Virtual"
+    },
+    {
+     "letter": "C",
+     "word": "Circuit"
+    }
+   ]
+  }
+ },
+ "DCS": {
+  "analogy": "The control room of a refinery, coordinating thousands of valves and sensors across the plant.",
+  "contrast": {
+   "headline": "Plant-wide process control",
+   "vs": [
+    {
+     "id": "ICS",
+     "note": "Broader category"
+    },
+    {
+     "id": "SCADA",
+     "note": "Wide-area supervisory control"
+    }
+   ],
+   "edge": "A DCS controls one plant locally; SCADA supervises assets spread over wide areas."
+  },
+  "mnemonic": {
+   "phrase": "Distributed Control System",
+   "breakdown": [
+    {
+     "letter": "D",
+     "word": "Distributed"
+    },
+    {
+     "letter": "C",
+     "word": "Control"
+    },
+    {
+     "letter": "S",
+     "word": "System"
+    }
+   ]
+  }
+ },
+ "MIB": {
+  "analogy": "The catalog of every gauge and dial a managed device exposes to SNMP.",
+  "contrast": {
+   "headline": "SNMP object database",
+   "vs": [
+    {
+     "id": "OID",
+     "note": "Address within it"
+    },
+    {
+     "id": "SNMP",
+     "note": "Protocol that reads it"
+    },
+    {
+     "id": "NMS",
+     "note": "Console querying it"
+    }
+   ],
+   "edge": "The MIB defines what can be read; OIDs address individual entries."
+  },
+  "mnemonic": {
+   "phrase": "Management Information Base",
+   "breakdown": [
+    {
+     "letter": "M",
+     "word": "Management"
+    },
+    {
+     "letter": "I",
+     "word": "Information"
+    },
+    {
+     "letter": "B",
+     "word": "Base"
+    }
+   ]
+  }
+ },
+ "NMS": {
+  "analogy": "The building manager's central dashboard watching every device's vital signs.",
+  "contrast": {
+   "headline": "Central network monitoring console",
+   "vs": [
+    {
+     "id": "SNMP",
+     "note": "Protocol it uses"
+    },
+    {
+     "id": "MIB",
+     "note": "Data it reads"
+    }
+   ],
+   "edge": "The NMS is the manager; SNMP agents on devices answer its queries."
+  },
+  "mnemonic": {
+   "phrase": "Network Monitoring Station",
+   "breakdown": [
+    {
+     "letter": "N",
+     "word": "Network"
+    },
+    {
+     "letter": "M",
+     "word": "Monitoring"
+    },
+    {
+     "letter": "S",
+     "word": "Station"
+    }
+   ]
+  }
+ },
+ "SIP": {
+  "analogy": "The receptionist who dials, connects, and hangs up calls but never carries the conversation itself.",
+  "contrast": {
+   "headline": "Sets up VoIP sessions",
+   "vs": [
+    {
+     "id": "L7",
+     "note": "Application layer"
+    },
+    {
+     "id": "TLS",
+     "note": "Secures signaling on 5061"
+    }
+   ],
+   "edge": "SIP only signals calls; the voice itself travels separately, usually over RTP."
+  },
+  "mnemonic": {
+   "phrase": "Session Initiation Protocol",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Session"
+    },
+    {
+     "letter": "I",
+     "word": "Initiation"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "OID": {
+  "analogy": "A Dewey Decimal number pointing to exactly one book in the SNMP library.",
+  "contrast": {
+   "headline": "Unique SNMP object address",
+   "vs": [
+    {
+     "id": "MIB",
+     "note": "Tree it indexes"
+    },
+    {
+     "id": "SNMP",
+     "note": "Protocol using it"
+    }
+   ],
+   "edge": "An OID is just an address; the MIB defines what lives there."
+  },
+  "mnemonic": {
+   "phrase": "Object Identifier Digits",
+   "breakdown": [
+    {
+     "letter": "O",
+     "word": "Object"
+    },
+    {
+     "letter": "I",
+     "word": "Identifier"
+    },
+    {
+     "letter": "D",
+     "word": "Digits"
+    }
+   ]
+  }
+ },
+ "SPD": {
+  "analogy": "The customs rulebook deciding which packages get sealed, waved through, or rejected.",
+  "contrast": {
+   "headline": "IPSec traffic policy rules",
+   "vs": [
+    {
+     "id": "IPSec",
+     "note": "Suite it governs"
+    },
+    {
+     "id": "IKE",
+     "note": "Negotiates the SAs"
+    }
+   ],
+   "edge": "The SPD decides what to protect; IKE negotiates how to protect it."
+  },
+  "mnemonic": {
+   "phrase": "Security Policy Database",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Security"
+    },
+    {
+     "letter": "P",
+     "word": "Policy"
+    },
+    {
+     "letter": "D",
+     "word": "Database"
+    }
+   ]
+  }
+ },
+ "EAP": {
+  "analogy": "A universal ID checkpoint that accepts passports, badges or fingerprints — whichever method you plug in.",
+  "contrast": {
+   "headline": "Pluggable authentication framework",
+   "vs": [
+    {
+     "id": "RADIUS",
+     "note": "Back-end that validates"
+    },
+    {
+     "id": "TTLS",
+     "note": "One EAP method"
+    },
+    {
+     "id": "L2",
+     "note": "Runs before IP"
+    },
+    {
+     "id": "WPA2",
+     "note": "Enterprise mode uses EAP"
+    }
+   ],
+   "edge": "EAP is a framework, not a method; EAP-TLS and EAP-TTLS are methods inside it."
+  },
+  "mnemonic": {
+   "phrase": "Extensible Authentication Protocol",
+   "breakdown": [
+    {
+     "letter": "E",
+     "word": "Extensible"
+    },
+    {
+     "letter": "A",
+     "word": "Authentication"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "DKIM": {
+  "analogy": "A tamper-evident wax seal on outgoing mail, verifiable with a public stamp published in DNS.",
+  "contrast": {
+   "headline": "Signs email for authenticity",
+   "vs": [
+    {
+     "id": "ESG",
+     "note": "Gateway checking signatures"
+    },
+    {
+     "id": "DNS",
+     "note": "Hosts public key"
+    },
+    {
+     "id": "SPF",
+     "note": "Checks sending server"
+    }
+   ],
+   "edge": "DKIM signs the message itself; SPF only checks which server sent it."
+  },
+  "mnemonic": {
+   "phrase": "Domain Keys Identify Mail",
+   "breakdown": [
+    {
+     "letter": "D",
+     "word": "Domain"
+    },
+    {
+     "letter": "K",
+     "word": "Keys"
+    },
+    {
+     "letter": "I",
+     "word": "Identify"
+    },
+    {
+     "letter": "M",
+     "word": "Mail"
+    }
+   ]
+  }
+ },
+ "SPF": {
+  "analogy": "A guest list published by your domain naming which mail servers may send on its behalf.",
+  "contrast": {
+   "headline": "Authorized sending servers list",
+   "vs": [
+    {
+     "id": "ESG",
+     "note": "Gateway enforcing it"
+    },
+    {
+     "id": "DNS",
+     "note": "Where SPF is published"
+    },
+    {
+     "id": "DKIM",
+     "note": "Signs message content"
+    }
+   ],
+   "edge": "SPF validates the sending server's IP; it says nothing about message tampering."
+  },
+  "mnemonic": {
+   "phrase": "Sender Permission File",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Sender"
+    },
+    {
+     "letter": "P",
+     "word": "Permission"
+    },
+    {
+     "letter": "F",
+     "word": "File"
+    }
+   ]
+  }
+ },
+ "DMARC": {
+  "analogy": "The rulebook telling mail servers what to do with a letter that fails the seal and guest-list checks.",
+  "contrast": {
+   "headline": "Enforcement policy for SPF/DKIM",
+   "vs": [
+    {
+     "id": "ESG",
+     "note": "Applies the policy"
+    },
+    {
+     "id": "SPF",
+     "note": "One check it uses"
+    },
+    {
+     "id": "DKIM",
+     "note": "Other check it uses"
+    },
+    {
+     "id": "DNS",
+     "note": "Where policy lives"
+    }
+   ],
+   "edge": "DMARC tells receivers to quarantine or reject failures and sends reports back."
+  },
+  "mnemonic": {
+   "phrase": "Domains Must Authenticate Real Correspondence",
+   "breakdown": [
+    {
+     "letter": "D",
+     "word": "Domains"
+    },
+    {
+     "letter": "M",
+     "word": "Must"
+    },
+    {
+     "letter": "A",
+     "word": "Authenticate"
+    },
+    {
+     "letter": "R",
+     "word": "Real"
+    },
+    {
+     "letter": "C",
+     "word": "Correspondence"
+    }
+   ]
+  }
+ },
+ "DMAC": {
+  "analogy": "The apartment number on an envelope inside the building — it only matters on the local hallway.",
+  "contrast": {
+   "headline": "Destination Layer 2 address",
+   "vs": [
+    {
+     "id": "L2",
+     "note": "Data link layer"
+    },
+    {
+     "id": "VLAN",
+     "note": "Frames carry VLAN tags"
+    }
+   ],
+   "edge": "A destination MAC only gets a frame across one local hop, then gets rewritten."
+  },
+  "mnemonic": {
+   "phrase": "Destination MAC Address Card",
+   "breakdown": [
+    {
+     "letter": "D",
+     "word": "Destination"
+    },
+    {
+     "letter": "M",
+     "word": "MAC"
+    },
+    {
+     "letter": "A",
+     "word": "Address"
+    },
+    {
+     "letter": "C",
+     "word": "Card"
+    }
+   ]
+  }
+ },
+ "AH": {
+  "analogy": "A tamper seal on a transparent envelope — proves nothing changed, but anyone can read it.",
+  "contrast": {
+   "headline": "IPSec integrity without encryption",
+   "vs": [
+    {
+     "id": "ESP",
+     "note": "Adds encryption"
+    },
+    {
+     "id": "L3",
+     "note": "Network layer"
+    }
+   ],
+   "edge": "AH authenticates packets but does not encrypt, and it breaks through NAT."
+  },
+  "mnemonic": {
+   "phrase": "Authentication Header",
+   "breakdown": [
+    {
+     "letter": "A",
+     "word": "Authentication"
+    },
+    {
+     "letter": "H",
+     "word": "Header"
+    }
+   ]
+  }
+ },
+ "ESP": {
+  "analogy": "A sealed, opaque, tamper-evident envelope for every packet.",
+  "contrast": {
+   "headline": "IPSec encryption and integrity",
+   "vs": [
+    {
+     "id": "IPSec",
+     "note": "Suite it belongs to"
+    },
+    {
+     "id": "AH",
+     "note": "Integrity only"
+    },
+    {
+     "id": "L3",
+     "note": "Network layer"
+    }
+   ],
+   "edge": "ESP encrypts and authenticates, which is why it is used far more than AH."
+  },
+  "mnemonic": {
+   "phrase": "Encrypted Secure Payload",
+   "breakdown": [
+    {
+     "letter": "E",
+     "word": "Encrypted"
+    },
+    {
+     "letter": "S",
+     "word": "Secure"
+    },
+    {
+     "letter": "P",
+     "word": "Payload"
+    }
+   ]
+  }
+ },
+ "CRS": {
+  "analogy": "A ready-made blacklist of known tricks that a WAF bouncer memorizes before the shift.",
+  "contrast": {
+   "headline": "OWASP default WAF rules",
+   "vs": [
+    {
+     "id": "WAF",
+     "note": "Engine running it"
+    },
+    {
+     "id": "XSS",
+     "note": "Attack it detects"
+    },
+    {
+     "id": "SQLi",
+     "note": "Attack it detects"
+    }
+   ],
+   "edge": "CRS is the rule set; the WAF is the engine that enforces it."
+  },
+  "mnemonic": {
+   "phrase": "Core Rule Set",
+   "breakdown": [
+    {
+     "letter": "C",
+     "word": "Core"
+    },
+    {
+     "letter": "R",
+     "word": "Rule"
+    },
+    {
+     "letter": "S",
+     "word": "Set"
+    }
+   ]
+  }
+ },
+ "SWG": {
+  "analogy": "A customs office for outbound traffic, checking where employees browse and what they download.",
+  "contrast": {
+   "headline": "Filters outbound web traffic",
+   "vs": [
+    {
+     "id": "WAF",
+     "note": "Protects inbound apps"
+    },
+    {
+     "id": "DLP",
+     "note": "Stops data leaving"
+    },
+    {
+     "id": "SASE",
+     "note": "Cloud bundle including SWG"
+    }
+   ],
+   "edge": "A SWG protects users going out; a WAF protects apps coming in."
+  },
+  "mnemonic": {
+   "phrase": "Secure Web Gateway",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Secure"
+    },
+    {
+     "letter": "W",
+     "word": "Web"
+    },
+    {
+     "letter": "G",
+     "word": "Gateway"
+    }
+   ]
+  }
+ },
+ "APT": {
+  "analogy": "A burglar who moves into your attic for months, quietly learning the house before stealing anything.",
+  "contrast": {
+   "headline": "Long-term stealthy targeted intrusion",
+   "vs": [
+    {
+     "id": "C2",
+     "note": "Their remote control channel"
+    },
+    {
+     "id": "TTPs",
+     "note": "Their behavior patterns"
+    },
+    {
+     "id": "IoC",
+     "note": "Traces they leave"
+    }
+   ],
+   "edge": "APTs are patient, resourced and targeted, often nation-state backed."
+  },
+  "mnemonic": {
+   "phrase": "Attackers Persist Thoroughly",
+   "breakdown": [
+    {
+     "letter": "A",
+     "word": "Attackers"
+    },
+    {
+     "letter": "P",
+     "word": "Persist"
+    },
+    {
+     "letter": "T",
+     "word": "Thoroughly"
+    }
+   ]
+  }
+ },
+ "DDoS": {
+  "analogy": "Hiring a thousand people to stand in a shop doorway so real customers can't get in.",
+  "contrast": {
+   "headline": "Distributed availability attack",
+   "vs": [
+    {
+     "id": "ICMP",
+     "note": "Ping flood vector"
+    }
+   ],
+   "edge": "DDoS attacks availability from many sources at once, unlike a single-source DoS."
+  },
+  "mnemonic": {
+   "phrase": "Distributed Drowning of Service",
+   "breakdown": [
+    {
+     "letter": "D",
+     "word": "Distributed"
+    },
+    {
+     "letter": "D",
+     "word": "Drowning"
+    },
+    {
+     "letter": "O",
+     "word": "of"
+    },
+    {
+     "letter": "S",
+     "word": "Service"
+    }
+   ]
+  }
+ },
+ "MITM": {
+  "analogy": "A mail carrier who opens, reads, and reseals every letter before delivering it.",
+  "contrast": {
+   "headline": "Intercepts traffic between parties",
+   "vs": [
+    {
+     "id": "TLS",
+     "note": "Defends with certificates"
+    },
+    {
+     "id": "TOCTOU",
+     "note": "Race-condition timing attack"
+    }
+   ],
+   "edge": "MITM breaks confidentiality and integrity; TLS with proper certificate validation defeats it."
+  },
+  "mnemonic": {
+   "phrase": "Middleman Intercepts Traffic Mid-route",
+   "breakdown": [
+    {
+     "letter": "M",
+     "word": "Middleman"
+    },
+    {
+     "letter": "I",
+     "word": "Intercepts"
+    },
+    {
+     "letter": "T",
+     "word": "Traffic"
+    },
+    {
+     "letter": "M",
+     "word": "Mid-route"
+    }
+   ]
+  }
+ },
+ "XSS": {
+  "analogy": "Slipping a fake instruction card into a restaurant's menu so every diner who reads it follows your orders.",
+  "contrast": {
+   "headline": "Injects scripts into pages",
+   "vs": [
+    {
+     "id": "WAF",
+     "note": "Filters malicious input"
+    },
+    {
+     "id": "CRS",
+     "note": "Rules detecting XSS"
+    }
+   ],
+   "edge": "XSS runs in the victim's browser; SQLi runs against the server's database."
+  },
+  "mnemonic": {
+   "phrase": "Xtra Scripts Sneak",
+   "breakdown": [
+    {
+     "letter": "X",
+     "word": "Xtra"
+    },
+    {
+     "letter": "S",
+     "word": "Scripts"
+    },
+    {
+     "letter": "S",
+     "word": "Sneak"
+    }
+   ]
+  }
+ },
+ "SQLi": {
+  "analogy": "Writing 'and also open the safe' on a bank withdrawal slip, and the teller just does it.",
+  "contrast": {
+   "headline": "Injects commands into queries",
+   "vs": [
+    {
+     "id": "WAF",
+     "note": "Blocks injection patterns"
+    },
+    {
+     "id": "CRS",
+     "note": "Rules detecting SQLi"
+    }
+   ],
+   "edge": "Parameterized queries stop SQLi at the source; a WAF only adds a filter layer."
+  },
+  "mnemonic": {
+   "phrase": "Sneaky Query Lets intruders",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Sneaky"
+    },
+    {
+     "letter": "Q",
+     "word": "Query"
+    },
+    {
+     "letter": "L",
+     "word": "Lets"
+    },
+    {
+     "letter": "I",
+     "word": "intruders"
+    }
+   ]
+  }
+ },
+ "CVE": {
+  "analogy": "A public wanted-poster ID number, so everyone talks about the same vulnerability by the same name.",
+  "contrast": {
+   "headline": "Unique vulnerability identifier",
+   "vs": [
+    {
+     "id": "CVSS",
+     "note": "Scores its severity"
+    },
+    {
+     "id": "NVD",
+     "note": "Database enriching CVEs"
+    },
+    {
+     "id": "PUP",
+     "note": "Unwanted software, not vuln"
+    },
+    {
+     "id": "SEH",
+     "note": "Exploited mechanism"
+    }
+   ],
+   "edge": "A CVE names a vulnerability; CVSS tells you how severe it is."
+  },
+  "mnemonic": {
+   "phrase": "Catalogued Vulnerability Entry",
+   "breakdown": [
+    {
+     "letter": "C",
+     "word": "Catalogued"
+    },
+    {
+     "letter": "V",
+     "word": "Vulnerability"
+    },
+    {
+     "letter": "E",
+     "word": "Entry"
+    }
+   ]
+  }
+ },
+ "CVSS": {
+  "analogy": "A hurricane scale for vulnerabilities — a single number from 0 to 10 that says how bad the storm is.",
+  "contrast": {
+   "headline": "0–10 severity score",
+   "vs": [
+    {
+     "id": "CVE",
+     "note": "What gets scored"
+    },
+    {
+     "id": "NVD",
+     "note": "Publishes CVSS scores"
+    }
+   ],
+   "edge": "CVSS rates technical severity; real priority also depends on your environment."
+  },
+  "mnemonic": {
+   "phrase": "Critical Vulnerability Severity Scale",
+   "breakdown": [
+    {
+     "letter": "C",
+     "word": "Critical"
+    },
+    {
+     "letter": "V",
+     "word": "Vulnerability"
+    },
+    {
+     "letter": "S",
+     "word": "Severity"
+    },
+    {
+     "letter": "S",
+     "word": "Scale"
+    }
+   ]
+  }
+ },
+ "C2": {
+  "analogy": "The puppeteer's strings: infected machines quietly phone home to receive their next orders.",
+  "contrast": {
+   "headline": "Attacker's remote control channel",
+   "vs": [
+    {
+     "id": "APT",
+     "note": "Relies on C2"
+    },
+    {
+     "id": "RPC",
+     "note": "Abused for control"
+    },
+    {
+     "id": "RAT",
+     "note": "Malware using C2"
+    }
+   ],
+   "edge": "Blocking or detecting C2 beacons cuts attackers off from compromised hosts."
+  },
+  "mnemonic": {
+   "phrase": "Command 2",
+   "breakdown": [
+    {
+     "letter": "C",
+     "word": "Command"
+    },
+    {
+     "letter": "2",
+     "word": "2"
+    }
+   ]
+  }
+ },
+ "IoC": {
+  "analogy": "Muddy footprints and a broken window latch — clues proving someone already got in.",
+  "contrast": {
+   "headline": "Forensic evidence of breach",
+   "vs": [
+    {
+     "id": "APT",
+     "note": "Leaves IoCs behind"
+    },
+    {
+     "id": "SIEM",
+     "note": "Correlates IoCs"
+    },
+    {
+     "id": "AIS",
+     "note": "Shares IoCs automatically"
+    },
+    {
+     "id": "STIX",
+     "note": "Format for IoCs"
+    }
+   ],
+   "edge": "IoCs are reactive artifacts like hashes and IPs; TTPs describe attacker behavior."
+  },
+  "mnemonic": {
+   "phrase": "Indicator of Compromise",
+   "breakdown": [
+    {
+     "letter": "I",
+     "word": "Indicator"
+    },
+    {
+     "letter": "O",
+     "word": "of"
+    },
+    {
+     "letter": "C",
+     "word": "Compromise"
+    }
+   ]
+  }
+ },
+ "RAT": {
+  "analogy": "A trojan horse with a remote-controlled puppet inside, letting the attacker drive your PC from afar.",
+  "contrast": {
+   "headline": "Malware for covert remote control",
+   "vs": [
+    {
+     "id": "C2",
+     "note": "Server controlling it"
+    },
+    {
+     "id": "IoC",
+     "note": "Traces it leaves"
+    }
+   ],
+   "edge": "A RAT disguises itself as legitimate software, then hands full control to its operator."
+  },
+  "mnemonic": {
+   "phrase": "Remote Attacker Takeover",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Remote"
+    },
+    {
+     "letter": "A",
+     "word": "Attacker"
+    },
+    {
+     "letter": "T",
+     "word": "Takeover"
+    }
+   ]
+  }
+ },
+ "TTPs": {
+  "analogy": "A burglar's signature style — how they case houses, pick locks, and escape — rather than one fingerprint.",
+  "contrast": {
+   "headline": "Attacker behavior patterns",
+   "vs": [
+    {
+     "id": "APT",
+     "note": "Profiled by TTPs"
+    }
+   ],
+   "edge": "TTPs, mapped in MITRE ATT&CK, are harder for attackers to change than IoCs."
+  },
+  "mnemonic": {
+   "phrase": "Their Trademark Plays signature",
+   "breakdown": [
+    {
+     "letter": "T",
+     "word": "Their"
+    },
+    {
+     "letter": "T",
+     "word": "Trademark"
+    },
+    {
+     "letter": "P",
+     "word": "Plays"
+    },
+    {
+     "letter": "S",
+     "word": "signature"
+    }
+   ]
+  }
+ },
+ "PUP": {
+  "analogy": "The extra toolbars that sneak in when you click 'Next, Next, Finish' too quickly.",
+  "contrast": {
+   "headline": "Unwanted bundled software",
+   "vs": [
+    {
+     "id": "CVE",
+     "note": "Vulnerabilities, not software"
+    }
+   ],
+   "edge": "PUPs install with technical consent, so they're unwanted rather than strictly malicious."
+  },
+  "mnemonic": {
+   "phrase": "Probably Unwanted Program",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Probably"
+    },
+    {
+     "letter": "U",
+     "word": "Unwanted"
+    },
+    {
+     "letter": "P",
+     "word": "Program"
+    }
+   ]
+  }
+ },
+ "SEH": {
+  "analogy": "The emergency exit plan of a Windows program — attackers rewrite the map so the exit leads to their code.",
+  "contrast": {
+   "headline": "Windows exception handling chain",
+   "vs": [
+    {
+     "id": "CVE",
+     "note": "Tracks SEH exploit bugs"
+    }
+   ],
+   "edge": "SEH overwrites hijack the exception handler; SafeSEH and SEHOP mitigate them."
+  },
+  "mnemonic": {
+   "phrase": "Structured Exception Handler",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Structured"
+    },
+    {
+     "letter": "E",
+     "word": "Exception"
+    },
+    {
+     "letter": "H",
+     "word": "Handler"
+    }
+   ]
+  }
+ },
+ "MFA": {
+  "analogy": "A vault needing a key, a code, and your fingerprint — stealing one isn't enough.",
+  "contrast": {
+   "headline": "Two or more factor types",
+   "vs": [
+    {
+     "id": "TOTP",
+     "note": "Common possession factor"
+    },
+    {
+     "id": "RADIUS",
+     "note": "Can enforce MFA"
+    },
+    {
+     "id": "TGT",
+     "note": "Issued after login"
+    },
+    {
+     "id": "SAE",
+     "note": "Wi-Fi authentication, not MFA"
+    }
+   ],
+   "edge": "MFA needs different factor types; two passwords are still single-factor."
+  },
+  "mnemonic": {
+   "phrase": "Many Factors Authenticate",
+   "breakdown": [
+    {
+     "letter": "M",
+     "word": "Many"
+    },
+    {
+     "letter": "F",
+     "word": "Factors"
+    },
+    {
+     "letter": "A",
+     "word": "Authenticate"
+    }
+   ]
+  }
+ },
+ "SSO": {
+  "analogy": "A wristband at a festival: show ID once at the gate, then walk into every stage.",
+  "contrast": {
+   "headline": "One login, many apps",
+   "vs": [
+    {
+     "id": "SAML",
+     "note": "XML-based SSO protocol"
+    },
+    {
+     "id": "OIDC",
+     "note": "Modern OAuth-based SSO"
+    },
+    {
+     "id": "KDC",
+     "note": "Kerberos SSO hub"
+    }
+   ],
+   "edge": "SSO is convenient but makes one login a high-value target; pair it with MFA."
+  },
+  "mnemonic": {
+   "phrase": "Sign-in Spans Others",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Sign-in"
+    },
+    {
+     "letter": "S",
+     "word": "Spans"
+    },
+    {
+     "letter": "O",
+     "word": "Others"
+    }
+   ]
+  }
+ },
+ "SAML": {
+  "analogy": "A signed letter of introduction from your employer that a partner company accepts at its door.",
+  "contrast": {
+   "headline": "XML federated authentication",
+   "vs": [
+    {
+     "id": "SSO",
+     "note": "Purpose it serves"
+    }
+   ],
+   "edge": "SAML passes signed XML assertions, typical for enterprise web SSO."
+  },
+  "mnemonic": {
+   "phrase": "Signed Assertion Markup Language",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Signed"
+    },
+    {
+     "letter": "A",
+     "word": "Assertion"
+    },
+    {
+     "letter": "M",
+     "word": "Markup"
+    },
+    {
+     "letter": "L",
+     "word": "Language"
+    }
+   ]
+  }
+ },
+ "OAuth": {
+  "analogy": "Handing a valet key to the parking attendant — it drives the car but can't open the trunk.",
+  "contrast": {
+   "headline": "Delegated authorization tokens",
+   "vs": [
+    {
+     "id": "OIDC",
+     "note": "Adds identity on top"
+    },
+    {
+     "id": "API",
+     "note": "Access it delegates"
+    }
+   ],
+   "edge": "OAuth grants scoped access to resources; it is authorization, not authentication."
+  },
+  "mnemonic": {
+   "phrase": "Only Access Using Tokens Handed",
+   "breakdown": [
+    {
+     "letter": "O",
+     "word": "Only"
+    },
+    {
+     "letter": "A",
+     "word": "Access"
+    },
+    {
+     "letter": "U",
+     "word": "Using"
+    },
+    {
+     "letter": "T",
+     "word": "Tokens"
+    },
+    {
+     "letter": "H",
+     "word": "Handed"
+    }
+   ]
+  }
+ },
+ "OIDC": {
+  "analogy": "The valet key from OAuth plus a name badge proving who is holding it.",
+  "contrast": {
+   "headline": "Identity layer over OAuth",
+   "vs": [
+    {
+     "id": "SSO",
+     "note": "Common use case"
+    },
+    {
+     "id": "OAuth",
+     "note": "Authorization base layer"
+    }
+   ],
+   "edge": "OIDC adds an ID token so OAuth can also authenticate the user."
+  },
+  "mnemonic": {
+   "phrase": "OAuth Identity Delivered Cleanly",
+   "breakdown": [
+    {
+     "letter": "O",
+     "word": "OAuth"
+    },
+    {
+     "letter": "I",
+     "word": "Identity"
+    },
+    {
+     "letter": "D",
+     "word": "Delivered"
+    },
+    {
+     "letter": "C",
+     "word": "Cleanly"
+    }
+   ]
+  }
+ },
+ "LDAP": {
+  "analogy": "Asking the company switchboard operator to look up anyone's office, phone and team.",
+  "contrast": {
+   "headline": "Directory query protocol",
+   "vs": [
+    {
+     "id": "IAM",
+     "note": "Uses directory data"
+    },
+    {
+     "id": "L7",
+     "note": "Application layer"
+    },
+    {
+     "id": "NetBIOS",
+     "note": "Legacy name lookups"
+    },
+    {
+     "id": "KDC",
+     "note": "Kerberos alongside LDAP"
+    }
+   ],
+   "edge": "LDAP on 389 is cleartext; LDAPS on 636 adds TLS."
+  },
+  "mnemonic": {
+   "phrase": "Lookup Directory Address Protocol",
+   "breakdown": [
+    {
+     "letter": "L",
+     "word": "Lookup"
+    },
+    {
+     "letter": "D",
+     "word": "Directory"
+    },
+    {
+     "letter": "A",
+     "word": "Address"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "RADIUS": {
+  "analogy": "A central security desk that every Wi-Fi access point and VPN calls to check IDs.",
+  "contrast": {
+   "headline": "Centralized AAA for network access",
+   "vs": [
+    {
+     "id": "MFA",
+     "note": "Can enforce MFA"
+    },
+    {
+     "id": "TTLS",
+     "note": "EAP method it validates"
+    },
+    {
+     "id": "TACACS+",
+     "note": "Cisco device alternative"
+    },
+    {
+     "id": "AAA",
+     "note": "Framework it implements"
+    }
+   ],
+   "edge": "RADIUS uses UDP and encrypts only the password; TACACS+ encrypts everything."
+  },
+  "mnemonic": {
+   "phrase": "Remote Authentication Desk In Use Somewhere",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Remote"
+    },
+    {
+     "letter": "A",
+     "word": "Authentication"
+    },
+    {
+     "letter": "D",
+     "word": "Desk"
+    },
+    {
+     "letter": "I",
+     "word": "In"
+    },
+    {
+     "letter": "U",
+     "word": "Use"
+    },
+    {
+     "letter": "S",
+     "word": "Somewhere"
+    }
+   ]
+  }
+ },
+ "RBAC": {
+  "analogy": "Keycards issued by job title: every nurse gets the nurse card, every doctor the doctor card.",
+  "contrast": {
+   "headline": "Permissions through job roles",
+   "vs": [
+    {
+     "id": "IAM",
+     "note": "Manages the roles"
+    },
+    {
+     "id": "ABAC",
+     "note": "Attribute-based alternative"
+    }
+   ],
+   "edge": "RBAC ties permissions to roles, not people, which simplifies onboarding and audits."
+  },
+  "mnemonic": {
+   "phrase": "Roles Bestow Access Controls",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Roles"
+    },
+    {
+     "letter": "B",
+     "word": "Bestow"
+    },
+    {
+     "letter": "A",
+     "word": "Access"
+    },
+    {
+     "letter": "C",
+     "word": "Controls"
+    }
+   ]
+  }
+ },
+ "IAM": {
+  "analogy": "The HR and security office deciding who you are, what badge you get, and when it's revoked.",
+  "contrast": {
+   "headline": "Identity lifecycle and access",
+   "vs": [
+    {
+     "id": "LDAP",
+     "note": "Directory it uses"
+    },
+    {
+     "id": "RBAC",
+     "note": "Access model it applies"
+    },
+    {
+     "id": "PAM",
+     "note": "Privileged subset"
+    },
+    {
+     "id": "ZTNA",
+     "note": "Enforces identity per request"
+    }
+   ],
+   "edge": "IAM covers all identities; PAM focuses only on high-privilege accounts."
+  },
+  "mnemonic": {
+   "phrase": "Identity Access Management",
+   "breakdown": [
+    {
+     "letter": "I",
+     "word": "Identity"
+    },
+    {
+     "letter": "A",
+     "word": "Access"
+    },
+    {
+     "letter": "M",
+     "word": "Management"
+    }
+   ]
+  }
+ },
+ "PAM": {
+  "analogy": "Checking out the master key from a guarded cabinet, on camera, for a limited time.",
+  "contrast": {
+   "headline": "Controls privileged accounts",
+   "vs": [
+    {
+     "id": "IAM",
+     "note": "Broader identity umbrella"
+    },
+    {
+     "id": "UAC",
+     "note": "Local Windows elevation"
+    }
+   ],
+   "edge": "PAM vaults, rotates and records admin credentials instead of leaving them standing."
+  },
+  "mnemonic": {
+   "phrase": "Privileged Accounts Monitored",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Privileged"
+    },
+    {
+     "letter": "A",
+     "word": "Accounts"
+    },
+    {
+     "letter": "M",
+     "word": "Monitored"
+    }
+   ]
+  }
+ },
+ "TOTP": {
+  "analogy": "A secret handshake that changes every 30 seconds, known only to your phone and the server.",
+  "contrast": {
+   "headline": "Time-based one-time codes",
+   "vs": [
+    {
+     "id": "MFA",
+     "note": "Factor it provides"
+    }
+   ],
+   "edge": "TOTP codes come from a shared seed plus the current time, so clocks must agree."
+  },
+  "mnemonic": {
+   "phrase": "Time Offers Temporary Passcodes",
+   "breakdown": [
+    {
+     "letter": "T",
+     "word": "Time"
+    },
+    {
+     "letter": "O",
+     "word": "Offers"
+    },
+    {
+     "letter": "T",
+     "word": "Temporary"
+    },
+    {
+     "letter": "P",
+     "word": "Passcodes"
+    }
+   ]
+  }
+ },
+ "TACACS+": {
+  "analogy": "The network gear's private security desk, checking ID, permissions and logs in three separate steps.",
+  "contrast": {
+   "headline": "Cisco AAA for device admin",
+   "vs": [
+    {
+     "id": "RADIUS",
+     "note": "UDP-based alternative"
+    },
+    {
+     "id": "IAM",
+     "note": "Identity source behind it"
+    }
+   ],
+   "edge": "TACACS+ uses TCP 49, encrypts the full payload, and separates all three A's."
+  },
+  "mnemonic": {
+   "phrase": "Terminal Admins Can Authenticate Commands Securely",
+   "breakdown": [
+    {
+     "letter": "T",
+     "word": "Terminal"
+    },
+    {
+     "letter": "A",
+     "word": "Admins"
+    },
+    {
+     "letter": "C",
+     "word": "Can"
+    },
+    {
+     "letter": "A",
+     "word": "Authenticate"
+    },
+    {
+     "letter": "C",
+     "word": "Commands"
+    },
+    {
+     "letter": "S",
+     "word": "Securely"
+    }
+   ]
+  }
+ },
+ "KDC": {
+  "analogy": "The ticket office at a theme park: prove who you are once, then collect tickets for each ride.",
+  "contrast": {
+   "headline": "Kerberos ticket-issuing server",
+   "vs": [
+    {
+     "id": "AS",
+     "note": "Issues the TGT"
+    },
+    {
+     "id": "TGS",
+     "note": "Issues service tickets"
+    },
+    {
+     "id": "LDAP",
+     "note": "Directory alongside it"
+    },
+    {
+     "id": "SSO",
+     "note": "What the KDC enables"
+    }
+   ],
+   "edge": "The KDC contains both the AS and TGS, usually on a domain controller."
+  },
+  "mnemonic": {
+   "phrase": "Key Distribution Center",
+   "breakdown": [
+    {
+     "letter": "K",
+     "word": "Key"
+    },
+    {
+     "letter": "D",
+     "word": "Distribution"
+    },
+    {
+     "letter": "C",
+     "word": "Center"
+    }
+   ]
+  }
+ },
+ "Kerberos": {
+  "analogy": "A theme park wristband system: verify at the gate once, then trade the wristband for ride tickets.",
+  "contrast": {
+   "headline": "Ticket-based network authentication",
+   "vs": [
+    {
+     "id": "NTP",
+     "note": "Required time sync"
+    }
+   ],
+   "edge": "Kerberos never sends passwords over the network and rejects tickets with excessive clock skew."
+  },
+  "mnemonic": {
+   "phrase": "Keys expire rapidly, but every request obtains service",
+   "breakdown": [
+    {
+     "letter": "K",
+     "word": "Keys"
+    },
+    {
+     "letter": "E",
+     "word": "expire"
+    },
+    {
+     "letter": "R",
+     "word": "rapidly,"
+    },
+    {
+     "letter": "B",
+     "word": "but"
+    },
+    {
+     "letter": "E",
+     "word": "every"
+    },
+    {
+     "letter": "R",
+     "word": "request"
+    },
+    {
+     "letter": "O",
+     "word": "obtains"
+    },
+    {
+     "letter": "S",
+     "word": "service"
+    }
+   ]
+  }
+ },
+ "TACACS": {
+  "analogy": "The same Cisco security desk as TACACS+, the version the exam really means today.",
+  "contrast": {
+   "headline": "Cisco device AAA protocol",
+   "vs": [
+    {
+     "id": "AAA",
+     "note": "Framework it implements"
+    }
+   ],
+   "edge": "Modern TACACS+ encrypts the whole payload, unlike RADIUS which hides only the password."
+  },
+  "mnemonic": {
+   "phrase": "Total Admin Command Access Control Security",
+   "breakdown": [
+    {
+     "letter": "T",
+     "word": "Total"
+    },
+    {
+     "letter": "A",
+     "word": "Admin"
+    },
+    {
+     "letter": "C",
+     "word": "Command"
+    },
+    {
+     "letter": "A",
+     "word": "Access"
+    },
+    {
+     "letter": "C",
+     "word": "Control"
+    },
+    {
+     "letter": "S",
+     "word": "Security"
+    }
+   ]
+  }
+ },
+ "TGT": {
+  "analogy": "The theme-park wristband: it doesn't open rides itself, but it lets you collect ride tickets.",
+  "contrast": {
+   "headline": "Proof of login in Kerberos",
+   "vs": [
+    {
+     "id": "AS",
+     "note": "Issues the TGT"
+    },
+    {
+     "id": "TGS",
+     "note": "Accepts the TGT"
+    },
+    {
+     "id": "MFA",
+     "note": "Can precede TGT issuance"
+    }
+   ],
+   "edge": "A stolen TGT enables pass-the-ticket attacks, so its lifetime is kept short."
+  },
+  "mnemonic": {
+   "phrase": "Ticket Granting Ticket",
+   "breakdown": [
+    {
+     "letter": "T",
+     "word": "Ticket"
+    },
+    {
+     "letter": "G",
+     "word": "Granting"
+    },
+    {
+     "letter": "T",
+     "word": "Ticket"
+    }
+   ]
+  }
+ },
+ "TGS": {
+  "analogy": "The ride-ticket booth where you show your wristband to get a ticket for one specific ride.",
+  "contrast": {
+   "headline": "Issues Kerberos service tickets",
+   "vs": [
+    {
+     "id": "KDC",
+     "note": "Contains the TGS"
+    },
+    {
+     "id": "ST",
+     "note": "What it issues"
+    },
+    {
+     "id": "TGT",
+     "note": "What it requires"
+    }
+   ],
+   "edge": "The TGS exchanges a TGT for a service ticket; the AS issues the TGT."
+  },
+  "mnemonic": {
+   "phrase": "Ticket Granting Service",
+   "breakdown": [
+    {
+     "letter": "T",
+     "word": "Ticket"
+    },
+    {
+     "letter": "G",
+     "word": "Granting"
+    },
+    {
+     "letter": "S",
+     "word": "Service"
+    }
+   ]
+  }
+ },
+ "AS": {
+  "analogy": "The park entrance gate that checks your ID and puts on your wristband.",
+  "contrast": {
+   "headline": "Kerberos login verification",
+   "vs": [
+    {
+     "id": "KDC",
+     "note": "Contains the AS"
+    },
+    {
+     "id": "TGT",
+     "note": "What it issues"
+    }
+   ],
+   "edge": "The AS verifies the user once; later requests go to the TGS."
+  },
+  "mnemonic": {
+   "phrase": "Authentication Service",
+   "breakdown": [
+    {
+     "letter": "A",
+     "word": "Authentication"
+    },
+    {
+     "letter": "S",
+     "word": "Service"
+    }
+   ]
+  }
+ },
+ "ST": {
+  "analogy": "A single ride ticket that only works on the one attraction printed on it.",
+  "contrast": {
+   "headline": "Access to one service",
+   "vs": [
+    {
+     "id": "TGS",
+     "note": "Issues the ticket"
+    },
+    {
+     "id": "IAM",
+     "note": "Governs who gets one"
+    }
+   ],
+   "edge": "A service ticket is accepted by one service, encrypted with that service's key."
+  },
+  "mnemonic": {
+   "phrase": "Service Ticket",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Service"
+    },
+    {
+     "letter": "T",
+     "word": "Ticket"
+    }
+   ]
+  }
+ },
+ "SAE": {
+  "analogy": "Two people proving they know the same password without ever saying it aloud, so eavesdroppers learn nothing.",
+  "contrast": {
+   "headline": "WPA3 password-based key exchange",
+   "vs": [
+    {
+     "id": "WPA2",
+     "note": "PSK predecessor it replaces"
+    },
+    {
+     "id": "MFA",
+     "note": "Unrelated, user-level factors"
+    }
+   ],
+   "edge": "SAE (Dragonfly) resists offline dictionary attacks that break WPA2-PSK."
+  },
+  "mnemonic": {
+   "phrase": "Safe Authentication Exchange",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Safe"
+    },
+    {
+     "letter": "A",
+     "word": "Authentication"
+    },
+    {
+     "letter": "E",
+     "word": "Exchange"
+    }
+   ]
+  }
+ },
+ "ABAC": {
+  "analogy": "A door that opens only if your department, clearance, location and the time of day all match the policy.",
+  "contrast": {
+   "headline": "Policy over many attributes",
+   "vs": [
+    {
+     "id": "RuBAC",
+     "note": "Fixed system rules"
+    },
+    {
+     "id": "RBAC",
+     "note": "Simpler role-based model"
+    },
+    {
+     "id": "IAM",
+     "note": "Supplies the attributes"
+    }
+   ],
+   "edge": "ABAC evaluates many attributes per request, far more granular than roles alone."
+  },
+  "mnemonic": {
+   "phrase": "Attributes Become Access Criteria",
+   "breakdown": [
+    {
+     "letter": "A",
+     "word": "Attributes"
+    },
+    {
+     "letter": "B",
+     "word": "Become"
+    },
+    {
+     "letter": "A",
+     "word": "Access"
+    },
+    {
+     "letter": "C",
+     "word": "Criteria"
+    }
+   ]
+  }
+ },
+ "UAC": {
+  "analogy": "Windows tapping your shoulder: 'Are you sure you want to use admin powers for this?'",
+  "contrast": {
+   "headline": "Windows elevation prompt",
+   "vs": [
+    {
+     "id": "PAM",
+     "note": "Enterprise privilege control"
+    },
+    {
+     "id": "IAM",
+     "note": "Identity management overall"
+    }
+   ],
+   "edge": "UAC runs users with standard rights and asks before elevating any action."
+  },
+  "mnemonic": {
+   "phrase": "User Approves Changes",
+   "breakdown": [
+    {
+     "letter": "U",
+     "word": "User"
+    },
+    {
+     "letter": "A",
+     "word": "Approves"
+    },
+    {
+     "letter": "C",
+     "word": "Changes"
+    }
+   ]
+  }
+ },
+ "RuBAC": {
+  "analogy": "A sign on the door saying 'closed after 6 PM' that applies to everyone, whoever they are.",
+  "contrast": {
+   "headline": "System-wide rules, not identity",
+   "vs": [
+    {
+     "id": "IAM",
+     "note": "Identity system overall"
+    },
+    {
+     "id": "ABAC",
+     "note": "Attribute-driven policies"
+    },
+    {
+     "id": "ACL",
+     "note": "Rule lists it applies"
+    }
+   ],
+   "edge": "RuBAC applies the same rules to everyone, such as firewall ACLs or time windows."
+  },
+  "mnemonic": {
+   "phrase": "Rules universally Bind Access Control",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Rules"
+    },
+    {
+     "letter": "U",
+     "word": "universally"
+    },
+    {
+     "letter": "B",
+     "word": "Bind"
+    },
+    {
+     "letter": "A",
+     "word": "Access"
+    },
+    {
+     "letter": "C",
+     "word": "Control"
+    }
+   ]
+  }
+ },
+ "AAA": {
+  "analogy": "A nightclub: check your ID, decide which rooms you can enter, and log what you ordered.",
+  "contrast": {
+   "headline": "Authenticate, authorize, account",
+   "vs": [
+    {
+     "id": "RADIUS",
+     "note": "Implements AAA"
+    },
+    {
+     "id": "TACACS",
+     "note": "Implements AAA"
+    },
+    {
+     "id": "IAM",
+     "note": "Identity management overall"
+    }
+   ],
+   "edge": "AAA is the framework; RADIUS and TACACS+ are protocols that carry it out."
+  },
+  "mnemonic": {
+   "phrase": "Authenticate Authorize Account",
+   "breakdown": [
+    {
+     "letter": "A",
+     "word": "Authenticate"
+    },
+    {
+     "letter": "A",
+     "word": "Authorize"
+    },
+    {
+     "letter": "A",
+     "word": "Account"
+    }
+   ]
+  }
+ },
+ "ACL": {
+  "analogy": "A doorman's clipboard checked top to bottom — the first matching line decides who gets in.",
+  "contrast": {
+   "headline": "Ordered permit and deny rules",
+   "vs": [
+    {
+     "id": "RuBAC",
+     "note": "Model ACLs implement"
+    },
+    {
+     "id": "IAM",
+     "note": "Identity-based access"
+    },
+    {
+     "id": "NGFW",
+     "note": "Enforces ACLs plus more"
+    },
+    {
+     "id": "FW",
+     "note": "Enforces ACLs"
+    }
+   ],
+   "edge": "ACLs are processed in order with an implicit deny at the end."
+  },
+  "mnemonic": {
+   "phrase": "Allow Check List",
+   "breakdown": [
+    {
+     "letter": "A",
+     "word": "Allow"
+    },
+    {
+     "letter": "C",
+     "word": "Check"
+    },
+    {
+     "letter": "L",
+     "word": "List"
+    }
+   ]
+  }
+ },
+ "FRR": {
+  "analogy": "A fingerprint door so fussy it keeps locking out the very employees it should admit.",
+  "contrast": {
+   "headline": "Legitimate users wrongly rejected",
+   "vs": [
+    {
+     "id": "CER",
+     "note": "Where FRR equals FAR"
+    },
+    {
+     "id": "MFA",
+     "note": "Biometrics as a factor"
+    }
+   ],
+   "edge": "FRR is an inconvenience error; FAR is the security error of admitting impostors."
+  },
+  "mnemonic": {
+   "phrase": "Frustrated Real Rejected",
+   "breakdown": [
+    {
+     "letter": "F",
+     "word": "Frustrated"
+    },
+    {
+     "letter": "R",
+     "word": "Real"
+    },
+    {
+     "letter": "R",
+     "word": "Rejected"
+    }
+   ]
+  }
+ },
+ "NGFW": {
+  "analogy": "A border guard who not only checks passports but opens luggage and knows which app you're carrying.",
+  "contrast": {
+   "headline": "Application-aware firewall",
+   "vs": [
+    {
+     "id": "IPS",
+     "note": "Built-in prevention"
+    },
+    {
+     "id": "DMZ",
+     "note": "Zones it separates"
+    },
+    {
+     "id": "UTM",
+     "note": "SMB all-in-one cousin"
+    },
+    {
+     "id": "FWaaS",
+     "note": "Cloud-delivered version"
+    }
+   ],
+   "edge": "An NGFW identifies applications and users, not just ports, using deep packet inspection."
+  },
+  "mnemonic": {
+   "phrase": "Next Generation Fire Wall",
+   "breakdown": [
+    {
+     "letter": "N",
+     "word": "Next"
+    },
+    {
+     "letter": "G",
+     "word": "Generation"
+    },
+    {
+     "letter": "F",
+     "word": "Fire"
+    },
+    {
+     "letter": "W",
+     "word": "Wall"
+    }
+   ]
+  }
+ },
+ "DPI": {
+  "analogy": "A customs officer who opens every parcel and reads the contents, not just the shipping label.",
+  "contrast": {
+   "headline": "Inspects full packet payloads",
+   "vs": [
+    {
+     "id": "NGFW",
+     "note": "Uses DPI"
+    },
+    {
+     "id": "IPS",
+     "note": "Uses DPI"
+    },
+    {
+     "id": "L7",
+     "note": "Inspects application data"
+    }
+   ],
+   "edge": "DPI reads payloads, but encrypted traffic must be decrypted first to inspect it."
+  },
+  "mnemonic": {
+   "phrase": "Deep Payload Inspection",
+   "breakdown": [
+    {
+     "letter": "D",
+     "word": "Deep"
+    },
+    {
+     "letter": "P",
+     "word": "Payload"
+    },
+    {
+     "letter": "I",
+     "word": "Inspection"
+    }
+   ]
+  }
+ },
+ "DMZ": {
+  "analogy": "The lobby of a secured building: visitors can reach reception, but not the offices upstairs.",
+  "contrast": {
+   "headline": "Buffer zone for public servers",
+   "vs": [
+    {
+     "id": "NGFW",
+     "note": "Separates the zones"
+    },
+    {
+     "id": "VLAN",
+     "note": "Implements segmentation"
+    }
+   ],
+   "edge": "Public-facing servers live in the DMZ so a breach doesn't reach the internal LAN."
+  },
+  "mnemonic": {
+   "phrase": "Demilitarized Middle Zone",
+   "breakdown": [
+    {
+     "letter": "D",
+     "word": "Demilitarized"
+    },
+    {
+     "letter": "M",
+     "word": "Middle"
+    },
+    {
+     "letter": "Z",
+     "word": "Zone"
+    }
+   ]
+  }
+ },
+ "DLP": {
+  "analogy": "Security at the exit scanning everyone's bags for documents they shouldn't be carrying out.",
+  "contrast": {
+   "headline": "Stops sensitive data leaving",
+   "vs": [
+    {
+     "id": "SIEM",
+     "note": "Receives DLP alerts"
+    },
+    {
+     "id": "SWG",
+     "note": "Inspects outbound web"
+    },
+    {
+     "id": "ESG",
+     "note": "Inspects outbound email"
+    }
+   ],
+   "edge": "DLP classifies and blocks sensitive data in motion, at rest, and in use."
+  },
+  "mnemonic": {
+   "phrase": "Data Leak Prevention",
+   "breakdown": [
+    {
+     "letter": "D",
+     "word": "Data"
+    },
+    {
+     "letter": "L",
+     "word": "Leak"
+    },
+    {
+     "letter": "P",
+     "word": "Prevention"
+    }
+   ]
+  }
+ },
+ "NAC": {
+  "analogy": "A health screening at the door: no badge, missing patches, or no antivirus means no entry.",
+  "contrast": {
+   "headline": "Admission based on device posture",
+   "vs": [
+    {
+     "id": "MDM",
+     "note": "Supplies device compliance data"
+    }
+   ],
+   "edge": "NAC checks device identity and health before granting any network access."
+  },
+  "mnemonic": {
+   "phrase": "Network Admission Checkpoint",
+   "breakdown": [
+    {
+     "letter": "N",
+     "word": "Network"
+    },
+    {
+     "letter": "A",
+     "word": "Admission"
+    },
+    {
+     "letter": "C",
+     "word": "Checkpoint"
+    }
+   ]
+  }
+ },
+ "ZTNA": {
+  "analogy": "A building where every single door checks your badge, even after you're already inside.",
+  "contrast": {
+   "headline": "Per-request access, never implicit trust",
+   "vs": [
+    {
+     "id": "IAM",
+     "note": "Supplies identity"
+    },
+    {
+     "id": "SASE",
+     "note": "Bundles ZTNA"
+    }
+   ],
+   "edge": "ZTNA grants access per application, replacing a VPN's broad network-level trust."
+  },
+  "mnemonic": {
+   "phrase": "Zero Trust Never Assumed",
+   "breakdown": [
+    {
+     "letter": "Z",
+     "word": "Zero"
+    },
+    {
+     "letter": "T",
+     "word": "Trust"
+    },
+    {
+     "letter": "N",
+     "word": "Never"
+    },
+    {
+     "letter": "A",
+     "word": "Assumed"
+    }
+   ]
+  }
+ },
+ "MDM": {
+  "analogy": "A remote control for the company's phones: push settings, enforce PINs, wipe a lost device.",
+  "contrast": {
+   "headline": "Central mobile device control",
+   "vs": [
+    {
+     "id": "NAC",
+     "note": "Checks MDM compliance"
+    }
+   ],
+   "edge": "MDM enforces policy on devices, including remote wipe if one is lost."
+  },
+  "mnemonic": {
+   "phrase": "Mobile Device Management",
+   "breakdown": [
+    {
+     "letter": "M",
+     "word": "Mobile"
+    },
+    {
+     "letter": "D",
+     "word": "Device"
+    },
+    {
+     "letter": "M",
+     "word": "Management"
+    }
+   ]
+  }
+ },
+ "SCADA": {
+  "analogy": "Mission control for a power grid, watching and steering equipment spread across hundreds of miles.",
+  "contrast": {
+   "headline": "Supervises dispersed industrial systems",
+   "vs": [
+    {
+     "id": "ICS",
+     "note": "Broader category"
+    },
+    {
+     "id": "PLC",
+     "note": "Controls local machines"
+    },
+    {
+     "id": "RTU",
+     "note": "Reports from field sites"
+    },
+    {
+     "id": "DCS",
+     "note": "Single-plant control"
+    }
+   ],
+   "edge": "SCADA supervises widely spread assets, often over legacy and insecure protocols."
+  },
+  "mnemonic": {
+   "phrase": "Supervise Control And Data Acquisition",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Supervise"
+    },
+    {
+     "letter": "C",
+     "word": "Control"
+    },
+    {
+     "letter": "A",
+     "word": "And"
+    },
+    {
+     "letter": "D",
+     "word": "Data"
+    },
+    {
+     "letter": "A",
+     "word": "Acquisition"
+    }
+   ]
+  }
+ },
+ "ICS": {
+  "analogy": "The nervous system of factories and utilities, where a hack can move physical machinery.",
+  "contrast": {
+   "headline": "Controls physical industrial processes",
+   "vs": [
+    {
+     "id": "SCADA",
+     "note": "Wide-area ICS type"
+    },
+    {
+     "id": "RTOS",
+     "note": "OS in controllers"
+    },
+    {
+     "id": "PLC",
+     "note": "Core ICS device"
+    },
+    {
+     "id": "RTU",
+     "note": "Remote field device"
+    }
+   ],
+   "edge": "In ICS, availability and safety come first, so patching is slow and careful."
+  },
+  "mnemonic": {
+   "phrase": "Industrial Control Systems",
+   "breakdown": [
+    {
+     "letter": "I",
+     "word": "Industrial"
+    },
+    {
+     "letter": "C",
+     "word": "Control"
+    },
+    {
+     "letter": "S",
+     "word": "Systems"
+    }
+   ]
+  }
+ },
+ "PLC": {
+  "analogy": "A rugged little brain bolted to a machine, running its on-off logic all day in the factory heat.",
+  "contrast": {
+   "headline": "Ruggedized machine controller",
+   "vs": [
+    {
+     "id": "ICS",
+     "note": "System it belongs to"
+    },
+    {
+     "id": "SCADA",
+     "note": "Supervises the PLCs"
+    }
+   ],
+   "edge": "PLCs directly drive machinery; Stuxnet showed what happens when they are reprogrammed."
+  },
+  "mnemonic": {
+   "phrase": "Programmable Logic Controller",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Programmable"
+    },
+    {
+     "letter": "L",
+     "word": "Logic"
+    },
+    {
+     "letter": "C",
+     "word": "Controller"
+    }
+   ]
+  }
+ },
+ "RTU": {
+  "analogy": "A remote weather station reporting gauge readings back to mission control.",
+  "contrast": {
+   "headline": "Field data collector for SCADA",
+   "vs": [
+    {
+     "id": "SCADA",
+     "note": "Receives its data"
+    },
+    {
+     "id": "ICS",
+     "note": "System it belongs to"
+    }
+   ],
+   "edge": "RTUs sit at remote sites and relay telemetry over long distances."
+  },
+  "mnemonic": {
+   "phrase": "Remote Telemetry Unit",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Remote"
+    },
+    {
+     "letter": "T",
+     "word": "Telemetry"
+    },
+    {
+     "letter": "U",
+     "word": "Unit"
+    }
+   ]
+  }
+ },
+ "RFID": {
+  "analogy": "A name tag that announces itself to any reader nearby, whether you meant it to or not.",
+  "contrast": {
+   "headline": "Radio tags for badges, tracking",
+   "vs": [
+    {
+     "id": "MFA",
+     "note": "Badges as possession factor"
+    }
+   ],
+   "edge": "RFID badges can be skimmed and cloned at a distance; shielded sleeves help."
+  },
+  "mnemonic": {
+   "phrase": "Radio Finds Identity Discreetly",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Radio"
+    },
+    {
+     "letter": "F",
+     "word": "Finds"
+    },
+    {
+     "letter": "I",
+     "word": "Identity"
+    },
+    {
+     "letter": "D",
+     "word": "Discreetly"
+    }
+   ]
+  }
+ },
+ "UTM": {
+  "analogy": "A Swiss Army knife appliance: firewall, IPS, antivirus and filtering in one box.",
+  "contrast": {
+   "headline": "All-in-one security appliance",
+   "vs": [
+    {
+     "id": "IPS",
+     "note": "One bundled feature"
+    },
+    {
+     "id": "WAF",
+     "note": "Separate web filter"
+    },
+    {
+     "id": "NGFW",
+     "note": "Enterprise-grade relative"
+    }
+   ],
+   "edge": "A UTM simplifies small networks but creates a single point of failure."
+  },
+  "mnemonic": {
+   "phrase": "Unified Threat Management",
+   "breakdown": [
+    {
+     "letter": "U",
+     "word": "Unified"
+    },
+    {
+     "letter": "T",
+     "word": "Threat"
+    },
+    {
+     "letter": "M",
+     "word": "Management"
+    }
+   ]
+  }
+ },
+ "UPS": {
+  "analogy": "A battery bridge that keeps the lights on long enough for the generator to start.",
+  "contrast": {
+   "headline": "Short-term battery power backup",
+   "vs": [
+    {
+     "id": "BCP",
+     "note": "Continuity planning it supports"
+    },
+    {
+     "id": "PDU",
+     "note": "Distributes the power"
+    }
+   ],
+   "edge": "A UPS covers minutes of outage; generators handle longer ones."
+  },
+  "mnemonic": {
+   "phrase": "Uninterrupted Power Supply",
+   "breakdown": [
+    {
+     "letter": "U",
+     "word": "Uninterrupted"
+    },
+    {
+     "letter": "P",
+     "word": "Power"
+    },
+    {
+     "letter": "S",
+     "word": "Supply"
+    }
+   ]
+  }
+ },
+ "SED": {
+  "analogy": "A diary that scrambles every word the instant you write it and unscrambles only for the right key.",
+  "contrast": {
+   "headline": "Hardware full-disk encryption",
+   "vs": [
+    {
+     "id": "AES",
+     "note": "Cipher built into drive"
+    },
+    {
+     "id": "TPM",
+     "note": "Can hold unlock keys"
+    },
+    {
+     "id": "HSM",
+     "note": "Enterprise key storage"
+    }
+   ],
+   "edge": "An SED encrypts in the drive's own hardware, independent of the operating system."
+  },
+  "mnemonic": {
+   "phrase": "Self Encrypting Drive",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Self"
+    },
+    {
+     "letter": "E",
+     "word": "Encrypting"
+    },
+    {
+     "letter": "D",
+     "word": "Drive"
+    }
+   ]
+  }
+ },
+ "UEFI": {
+  "analogy": "A bouncer at the computer's front door who checks the OS's signature before letting it boot.",
+  "contrast": {
+   "headline": "Modern firmware with Secure Boot",
+   "vs": [
+    {
+     "id": "TPM",
+     "note": "Measures the boot chain"
+    }
+   ],
+   "edge": "UEFI Secure Boot blocks unsigned bootloaders, stopping many rootkits and bootkits."
+  },
+  "mnemonic": {
+   "phrase": "Unsigned Executables Forbidden Initially",
+   "breakdown": [
+    {
+     "letter": "U",
+     "word": "Unsigned"
+    },
+    {
+     "letter": "E",
+     "word": "Executables"
+    },
+    {
+     "letter": "F",
+     "word": "Forbidden"
+    },
+    {
+     "letter": "I",
+     "word": "Initially"
+    }
+   ]
+  }
+ },
+ "ESG": {
+  "analogy": "A mailroom inspector who opens every envelope, tosses scams and malware, and stops secrets going out.",
+  "contrast": {
+   "headline": "Filters inbound and outbound email",
+   "vs": [
+    {
+     "id": "DMARC",
+     "note": "Policy it enforces"
+    },
+    {
+     "id": "SPF",
+     "note": "Sender check it runs"
+    },
+    {
+     "id": "DKIM",
+     "note": "Signature check it runs"
+    },
+    {
+     "id": "DLP",
+     "note": "Outbound data control"
+    }
+   ],
+   "edge": "An ESG is the enforcement point where SPF, DKIM and DMARC checks happen."
+  },
+  "mnemonic": {
+   "phrase": "Email Security Gateway",
+   "breakdown": [
+    {
+     "letter": "E",
+     "word": "Email"
+    },
+    {
+     "letter": "S",
+     "word": "Security"
+    },
+    {
+     "letter": "G",
+     "word": "Gateway"
+    }
+   ]
+  }
+ },
+ "PSU": {
+  "analogy": "The heart of a single computer, turning wall current into the steady pulse components need.",
+  "contrast": {
+   "headline": "Converts AC to DC",
+   "vs": [
+    {
+     "id": "PDU",
+     "note": "Feeds many PSUs"
+    }
+   ],
+   "edge": "A PSU powers one device; redundant PSUs remove a single point of failure."
+  },
+  "mnemonic": {
+   "phrase": "Power Supply Unit",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Power"
+    },
+    {
+     "letter": "S",
+     "word": "Supply"
+    },
+    {
+     "letter": "U",
+     "word": "Unit"
+    }
+   ]
+  }
+ },
+ "PDU": {
+  "analogy": "A smart power strip for a whole server rack, often with per-outlet monitoring and control.",
+  "contrast": {
+   "headline": "Distributes rack power",
+   "vs": [
+    {
+     "id": "PSU",
+     "note": "Devices it feeds"
+    },
+    {
+     "id": "UPS",
+     "note": "Battery feeding it"
+    }
+   ],
+   "edge": "A PDU distributes power; it provides no backup unless fed by a UPS."
+  },
+  "mnemonic": {
+   "phrase": "Power Distribution Unit",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Power"
+    },
+    {
+     "letter": "D",
+     "word": "Distribution"
+    },
+    {
+     "letter": "U",
+     "word": "Unit"
+    }
+   ]
+  }
+ },
+ "RAID0": {
+  "analogy": "Splitting a book's pages between two couriers — twice as fast, but lose one courier and the book is gone.",
+  "contrast": {
+   "headline": "Striping, speed, no redundancy",
+   "vs": [
+    {
+     "id": "RAID1",
+     "note": "Mirroring for redundancy"
+    },
+    {
+     "id": "RAID5",
+     "note": "Striping plus parity"
+    },
+    {
+     "id": "RAID10",
+     "note": "Striped mirrors"
+    }
+   ],
+   "edge": "RAID 0 offers zero fault tolerance; one failed drive destroys all data."
+  },
+  "mnemonic": {
+   "phrase": "Risky Arrays Increase Danger 0",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Risky"
+    },
+    {
+     "letter": "A",
+     "word": "Arrays"
+    },
+    {
+     "letter": "I",
+     "word": "Increase"
+    },
+    {
+     "letter": "D",
+     "word": "Danger"
+    },
+    {
+     "letter": "0",
+     "word": "0"
+    }
+   ]
+  }
+ },
+ "RAID1": {
+  "analogy": "Writing every page in two identical notebooks — if one is lost, the other is complete.",
+  "contrast": {
+   "headline": "Mirroring two drives",
+   "vs": [
+    {
+     "id": "RAID0",
+     "note": "Striping, no redundancy"
+    },
+    {
+     "id": "RAID10",
+     "note": "Mirrors then stripes"
+    }
+   ],
+   "edge": "RAID 1 survives one drive failure but halves usable capacity."
+  },
+  "mnemonic": {
+   "phrase": "Replicated Array Identical Drives 1",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Replicated"
+    },
+    {
+     "letter": "A",
+     "word": "Array"
+    },
+    {
+     "letter": "I",
+     "word": "Identical"
+    },
+    {
+     "letter": "D",
+     "word": "Drives"
+    },
+    {
+     "letter": "1",
+     "word": "1"
+    }
+   ]
+  }
+ },
+ "RAID5": {
+  "analogy": "Three friends each hold part of a puzzle plus a checksum, so any one can rebuild a missing piece.",
+  "contrast": {
+   "headline": "Striping with single parity",
+   "vs": [
+    {
+     "id": "RAID0",
+     "note": "No parity at all"
+    },
+    {
+     "id": "RAID6",
+     "note": "Double parity"
+    }
+   ],
+   "edge": "RAID 5 needs 3+ drives and survives exactly one failure."
+  },
+  "mnemonic": {
+   "phrase": "Rebuild Any Individual Drive 5",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Rebuild"
+    },
+    {
+     "letter": "A",
+     "word": "Any"
+    },
+    {
+     "letter": "I",
+     "word": "Individual"
+    },
+    {
+     "letter": "D",
+     "word": "Drive"
+    },
+    {
+     "letter": "5",
+     "word": "5"
+    }
+   ]
+  }
+ },
+ "RAID6": {
+  "analogy": "The puzzle-sharing friends keep two checksums, so even losing two of them doesn't sink the puzzle.",
+  "contrast": {
+   "headline": "Striping with double parity",
+   "vs": [
+    {
+     "id": "RAID5",
+     "note": "Single parity version"
+    }
+   ],
+   "edge": "RAID 6 needs 4+ drives and survives two simultaneous drive failures."
+  },
+  "mnemonic": {
+   "phrase": "Resilient Against Infrequent Disasters 6",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Resilient"
+    },
+    {
+     "letter": "A",
+     "word": "Against"
+    },
+    {
+     "letter": "I",
+     "word": "Infrequent"
+    },
+    {
+     "letter": "D",
+     "word": "Disasters"
+    },
+    {
+     "letter": "6",
+     "word": "6"
+    }
+   ]
+  }
+ },
+ "RAID10": {
+  "analogy": "Two pairs of twin notebooks with the pages split between pairs — fast and fault tolerant.",
+  "contrast": {
+   "headline": "Striped mirrors for speed",
+   "vs": [
+    {
+     "id": "RAID1",
+     "note": "Mirroring component"
+    },
+    {
+     "id": "RAID0",
+     "note": "Striping component"
+    }
+   ],
+   "edge": "RAID 10 needs 4+ drives and gives speed plus redundancy at 50% capacity."
+  },
+  "mnemonic": {
+   "phrase": "Redundant And Incredibly Durable 10",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Redundant"
+    },
+    {
+     "letter": "A",
+     "word": "And"
+    },
+    {
+     "letter": "I",
+     "word": "Incredibly"
+    },
+    {
+     "letter": "D",
+     "word": "Durable"
+    },
+    {
+     "letter": "1",
+     "word": "10"
+    }
+   ]
+  }
+ },
+ "HOT": {
+  "analogy": "A fully furnished, stocked spare office with the lights already on — move in within minutes.",
+  "contrast": {
+   "headline": "Immediate failover site",
+   "vs": [
+    {
+     "id": "WARM",
+     "note": "Partially equipped site"
+    },
+    {
+     "id": "RTO",
+     "note": "Drives the site choice"
+    },
+    {
+     "id": "BCP",
+     "note": "Plan it supports"
+    }
+   ],
+   "edge": "A hot site meets the shortest RTO but is the most expensive option."
+  },
+  "mnemonic": {
+   "phrase": "Here On Time",
+   "breakdown": [
+    {
+     "letter": "H",
+     "word": "Here"
+    },
+    {
+     "letter": "O",
+     "word": "On"
+    },
+    {
+     "letter": "T",
+     "word": "Time"
+    }
+   ]
+  }
+ },
+ "WARM": {
+  "analogy": "A spare office with desks and phones installed, but you still need to bring the files.",
+  "contrast": {
+   "headline": "Partially ready backup site",
+   "vs": [
+    {
+     "id": "HOT",
+     "note": "Ready in minutes"
+    },
+    {
+     "id": "COLD",
+     "note": "Empty shell site"
+    }
+   ],
+   "edge": "A warm site balances cost and recovery time, typically hours to days."
+  },
+  "mnemonic": {
+   "phrase": "Wait A Revival Moment",
+   "breakdown": [
+    {
+     "letter": "W",
+     "word": "Wait"
+    },
+    {
+     "letter": "A",
+     "word": "A"
+    },
+    {
+     "letter": "R",
+     "word": "Revival"
+    },
+    {
+     "letter": "M",
+     "word": "Moment"
+    }
+   ]
+  }
+ },
+ "COLD": {
+  "analogy": "An empty rented warehouse with power and network jacks, waiting for you to furnish it.",
+  "contrast": {
+   "headline": "Empty facility, slow activation",
+   "vs": [
+    {
+     "id": "WARM",
+     "note": "More equipped"
+    },
+    {
+     "id": "RTO",
+     "note": "Long recovery time"
+    }
+   ],
+   "edge": "A cold site is cheapest but takes days or weeks to activate."
+  },
+  "mnemonic": {
+   "phrase": "Cheap Option Long Delay",
+   "breakdown": [
+    {
+     "letter": "C",
+     "word": "Cheap"
+    },
+    {
+     "letter": "O",
+     "word": "Option"
+    },
+    {
+     "letter": "L",
+     "word": "Long"
+    },
+    {
+     "letter": "D",
+     "word": "Delay"
+    }
+   ]
+  }
+ },
+ "RTOS": {
+  "analogy": "A conductor who must hit every beat exactly on time — late is as bad as wrong.",
+  "contrast": {
+   "headline": "Deterministic time-critical OS",
+   "vs": [
+    {
+     "id": "ICS",
+     "note": "Common deployment"
+    }
+   ],
+   "edge": "An RTOS guarantees response deadlines, so heavy security tooling can be hard to add."
+  },
+  "mnemonic": {
+   "phrase": "Real Time Operating System",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Real"
+    },
+    {
+     "letter": "T",
+     "word": "Time"
+    },
+    {
+     "letter": "O",
+     "word": "Operating"
+    },
+    {
+     "letter": "S",
+     "word": "System"
+    }
+   ]
+  }
+ },
+ "ASLR": {
+  "analogy": "Rearranging a building's room numbers every morning so a burglar's floor plan is always wrong.",
+  "contrast": {
+   "headline": "Randomizes memory addresses",
+   "vs": [
+    {
+     "id": "CVE",
+     "note": "Exploits it frustrates"
+    },
+    {
+     "id": "ICS",
+     "note": "Often lacks ASLR"
+    }
+   ],
+   "edge": "ASLR makes memory-corruption exploits unreliable by hiding where code and data live."
+  },
+  "mnemonic": {
+   "phrase": "Addresses Shuffle Layout Randomly",
+   "breakdown": [
+    {
+     "letter": "A",
+     "word": "Addresses"
+    },
+    {
+     "letter": "S",
+     "word": "Shuffle"
+    },
+    {
+     "letter": "L",
+     "word": "Layout"
+    },
+    {
+     "letter": "R",
+     "word": "Randomly"
+    }
+   ]
+  }
+ },
+ "SCAP": {
+  "analogy": "A robotic auditor reading a standard checklist and scanning every machine against it automatically.",
+  "contrast": {
+   "headline": "Automated compliance and vuln checks",
+   "vs": [
+    {
+     "id": "NIST",
+     "note": "Maintains SCAP"
+    },
+    {
+     "id": "GRC",
+     "note": "Compliance it supports"
+    },
+    {
+     "id": "CVE",
+     "note": "Standard IDs it uses"
+    }
+   ],
+   "edge": "SCAP standardizes formats like CVE and CVSS so scanners share the same language."
+  },
+  "mnemonic": {
+   "phrase": "Security Content Automation Protocol",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Security"
+    },
+    {
+     "letter": "C",
+     "word": "Content"
+    },
+    {
+     "letter": "A",
+     "word": "Automation"
+    },
+    {
+     "letter": "P",
+     "word": "Protocol"
+    }
+   ]
+  }
+ },
+ "SDN": {
+  "analogy": "An air-traffic tower directing every plane centrally, instead of each pilot choosing routes alone.",
+  "contrast": {
+   "headline": "Centralized software network control",
+   "vs": [
+    {
+     "id": "VLAN",
+     "note": "Segmentation it automates"
+    },
+    {
+     "id": "SD-WAN",
+     "note": "SDN applied to WAN"
+    }
+   ],
+   "edge": "SDN separates the control plane from switches, so the controller must be well protected."
+  },
+  "mnemonic": {
+   "phrase": "Software Directs Network",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Software"
+    },
+    {
+     "letter": "D",
+     "word": "Directs"
+    },
+    {
+     "letter": "N",
+     "word": "Network"
+    }
+   ]
+  }
+ },
+ "SD-WAN": {
+  "analogy": "A smart GPS for company traffic, picking the best internet or MPLS link for each app in real time.",
+  "contrast": {
+   "headline": "Software-managed WAN links",
+   "vs": [
+    {
+     "id": "SASE",
+     "note": "Transport layer of SASE"
+    },
+    {
+     "id": "VPN",
+     "note": "Encrypts its tunnels"
+    },
+    {
+     "id": "SDN",
+     "note": "Underlying concept"
+    }
+   ],
+   "edge": "SD-WAN optimizes and steers WAN traffic; it is not a security stack alone."
+  },
+  "mnemonic": {
+   "phrase": "Smart Directs Wide Area Network",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Smart"
+    },
+    {
+     "letter": "D",
+     "word": "Directs"
+    },
+    {
+     "letter": "W",
+     "word": "Wide"
+    },
+    {
+     "letter": "A",
+     "word": "Area"
+    },
+    {
+     "letter": "N",
+     "word": "Network"
+    }
+   ]
+  }
+ },
+ "FWaaS": {
+  "analogy": "Renting a firewall in the cloud like a streaming subscription instead of buying a box for every office.",
+  "contrast": {
+   "headline": "Cloud-delivered firewall",
+   "vs": [
+    {
+     "id": "SASE",
+     "note": "Framework including FWaaS"
+    },
+    {
+     "id": "NGFW",
+     "note": "On-premises equivalent"
+    }
+   ],
+   "edge": "FWaaS protects remote users and branches without on-site firewall hardware."
+  },
+  "mnemonic": {
+   "phrase": "Firewall Wherever as a Service",
+   "breakdown": [
+    {
+     "letter": "F",
+     "word": "Firewall"
+    },
+    {
+     "letter": "W",
+     "word": "Wherever"
+    },
+    {
+     "letter": "A",
+     "word": "as"
+    },
+    {
+     "letter": "A",
+     "word": "a"
+    },
+    {
+     "letter": "S",
+     "word": "Service"
+    }
+   ]
+  }
+ },
+ "PaaS": {
+  "analogy": "Renting a fully equipped kitchen: you bring the recipe, they maintain the ovens.",
+  "contrast": {
+   "headline": "Managed platform for apps",
+   "vs": [
+    {
+     "id": "IaaS",
+     "note": "You manage more"
+    },
+    {
+     "id": "SaaS",
+     "note": "You manage less"
+    }
+   ],
+   "edge": "In PaaS you own your code and data; the provider runs OS and runtime."
+  },
+  "mnemonic": {
+   "phrase": "Platform as a Service",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Platform"
+    },
+    {
+     "letter": "A",
+     "word": "as"
+    },
+    {
+     "letter": "A",
+     "word": "a"
+    },
+    {
+     "letter": "S",
+     "word": "Service"
+    }
+   ]
+  }
+ },
+ "SASE": {
+  "analogy": "Moving the whole security checkpoint into the cloud so it follows every user wherever they work.",
+  "contrast": {
+   "headline": "Converged cloud network security",
+   "vs": [
+    {
+     "id": "SD-WAN",
+     "note": "Networking component"
+    },
+    {
+     "id": "CASB",
+     "note": "Cloud app control"
+    },
+    {
+     "id": "ZTNA",
+     "note": "Access component"
+    },
+    {
+     "id": "FWaaS",
+     "note": "Firewall component"
+    }
+   ],
+   "edge": "SASE bundles networking and security as one cloud service near the user."
+  },
+  "mnemonic": {
+   "phrase": "Security Anywhere Service Edge",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Security"
+    },
+    {
+     "letter": "A",
+     "word": "Anywhere"
+    },
+    {
+     "letter": "S",
+     "word": "Service"
+    },
+    {
+     "letter": "E",
+     "word": "Edge"
+    }
+   ]
+  }
+ },
+ "BCP": {
+  "analogy": "The plan for keeping the restaurant serving customers when the kitchen floods.",
+  "contrast": {
+   "headline": "Keeps the business operating",
+   "vs": [
+    {
+     "id": "DRP",
+     "note": "IT recovery subset"
+    },
+    {
+     "id": "RPO",
+     "note": "Data loss target"
+    },
+    {
+     "id": "RTO",
+     "note": "Downtime target"
+    },
+    {
+     "id": "GRC",
+     "note": "Governance over planning"
+    }
+   ],
+   "edge": "BCP keeps the whole business running; DRP focuses on restoring IT."
+  },
+  "mnemonic": {
+   "phrase": "Business Continuity Plan",
+   "breakdown": [
+    {
+     "letter": "B",
+     "word": "Business"
+    },
+    {
+     "letter": "C",
+     "word": "Continuity"
+    },
+    {
+     "letter": "P",
+     "word": "Plan"
+    }
+   ]
+  }
+ },
+ "DRP": {
+  "analogy": "The step-by-step guide for rebuilding the kitchen after the flood.",
+  "contrast": {
+   "headline": "Restores IT after disaster",
+   "vs": [
+    {
+     "id": "BCP",
+     "note": "Broader business plan"
+    },
+    {
+     "id": "RPO",
+     "note": "Data loss target"
+    },
+    {
+     "id": "RTO",
+     "note": "Restoration time target"
+    },
+    {
+     "id": "COOP",
+     "note": "Government continuity plan"
+    }
+   ],
+   "edge": "A DRP restores technology; the BCP keeps business functions alive meanwhile."
+  },
+  "mnemonic": {
+   "phrase": "Disaster Recovery Plan",
+   "breakdown": [
+    {
+     "letter": "D",
+     "word": "Disaster"
+    },
+    {
+     "letter": "R",
+     "word": "Recovery"
+    },
+    {
+     "letter": "P",
+     "word": "Plan"
+    }
+   ]
+  }
+ },
+ "RPO": {
+  "analogy": "How far back the last save point is — lose power now, and you redo everything since then.",
+  "contrast": {
+   "headline": "Maximum tolerable data loss",
+   "vs": [
+    {
+     "id": "BCP",
+     "note": "Plan setting targets"
+    },
+    {
+     "id": "DRP",
+     "note": "Plan meeting targets"
+    },
+    {
+     "id": "SLA",
+     "note": "Contract may promise it"
+    },
+    {
+     "id": "BIA",
+     "note": "Determines the value"
+    }
+   ],
+   "edge": "RPO is measured backward in data lost; RTO is measured forward in downtime."
+  },
+  "mnemonic": {
+   "phrase": "Restore Point Objective",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Restore"
+    },
+    {
+     "letter": "P",
+     "word": "Point"
+    },
+    {
+     "letter": "O",
+     "word": "Objective"
+    }
+   ]
+  }
+ },
+ "RTO": {
+  "analogy": "The stopwatch that starts when the lights go out and must not run past the deadline.",
+  "contrast": {
+   "headline": "Maximum tolerable downtime",
+   "vs": [
+    {
+     "id": "BCP",
+     "note": "Plan setting targets"
+    },
+    {
+     "id": "DRP",
+     "note": "Plan meeting targets"
+    },
+    {
+     "id": "SLA",
+     "note": "Contract may promise it"
+    },
+    {
+     "id": "HOT",
+     "note": "Site for short RTO"
+    }
+   ],
+   "edge": "RTO is how fast you must recover; RPO is how much data you can lose."
+  },
+  "mnemonic": {
+   "phrase": "Return To Operations",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Return"
+    },
+    {
+     "letter": "T",
+     "word": "To"
+    },
+    {
+     "letter": "O",
+     "word": "Operations"
+    }
+   ]
+  }
+ },
+ "GRC": {
+  "analogy": "The steering wheel, the risk map, and the rulebook — making security serve the business and the law.",
+  "contrast": {
+   "headline": "Governance, risk and compliance",
+   "vs": [
+    {
+     "id": "BCP",
+     "note": "Continuity under governance"
+    },
+    {
+     "id": "NIST",
+     "note": "Framework source"
+    },
+    {
+     "id": "ALE",
+     "note": "Quantifies risk"
+    },
+    {
+     "id": "ISO",
+     "note": "Standard to comply with"
+    }
+   ],
+   "edge": "GRC aligns security decisions with business goals and regulatory obligations."
+  },
+  "mnemonic": {
+   "phrase": "Governance Risk Compliance",
+   "breakdown": [
+    {
+     "letter": "G",
+     "word": "Governance"
+    },
+    {
+     "letter": "R",
+     "word": "Risk"
+    },
+    {
+     "letter": "C",
+     "word": "Compliance"
+    }
+   ]
+  }
+ },
+ "SDLM": {
+  "analogy": "The blueprint process for building a house, from sketches to inspection to move-in.",
+  "contrast": {
+   "headline": "Structured software build process",
+   "vs": [
+    {
+     "id": "SDLS",
+     "note": "Security in each phase"
+    },
+    {
+     "id": "RAD",
+     "note": "Fast iterative model"
+    }
+   ],
+   "edge": "The SDLC methodology structures development; SDLS embeds security into it."
+  },
+  "mnemonic": {
+   "phrase": "Software Development Lifecycle Methodology",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Software"
+    },
+    {
+     "letter": "D",
+     "word": "Development"
+    },
+    {
+     "letter": "L",
+     "word": "Lifecycle"
+    },
+    {
+     "letter": "M",
+     "word": "Methodology"
+    }
+   ]
+  }
+ },
+ "SDLS": {
+  "analogy": "Having the building inspector check every stage of construction, not just the finished house.",
+  "contrast": {
+   "headline": "Security in every SDLC phase",
+   "vs": [
+    {
+     "id": "SDLM",
+     "note": "Process it secures"
+    },
+    {
+     "id": "GRC",
+     "note": "Policy driving it"
+    }
+   ],
+   "edge": "Fixing flaws during design costs far less than patching them after release."
+  },
+  "mnemonic": {
+   "phrase": "Security During Lifecycle Stages",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Security"
+    },
+    {
+     "letter": "D",
+     "word": "During"
+    },
+    {
+     "letter": "L",
+     "word": "Lifecycle"
+    },
+    {
+     "letter": "S",
+     "word": "Stages"
+    }
+   ]
+  }
+ },
+ "RAD": {
+  "analogy": "Building a quick cardboard model, showing the client, and reshaping it again the same week.",
+  "contrast": {
+   "headline": "Fast prototyping development model",
+   "vs": [
+    {
+     "id": "SDLM",
+     "note": "Methodology family"
+    }
+   ],
+   "edge": "RAD favors speed and prototypes, so security reviews must keep pace with iterations."
+  },
+  "mnemonic": {
+   "phrase": "Rapid Application Development",
+   "breakdown": [
+    {
+     "letter": "R",
+     "word": "Rapid"
+    },
+    {
+     "letter": "A",
+     "word": "Application"
+    },
+    {
+     "letter": "D",
+     "word": "Development"
+    }
+   ]
+  }
+ },
+ "PII": {
+  "analogy": "Anything that could point a stranger straight to your front door — name, SSN, face, address.",
+  "contrast": {
+   "headline": "Data identifying a person",
+   "vs": [
+    {
+     "id": "GDPR",
+     "note": "EU law protecting it"
+    },
+    {
+     "id": "HIPAA",
+     "note": "Protects health subset"
+    },
+    {
+     "id": "PHI",
+     "note": "Health-related PII"
+    },
+    {
+     "id": "GLBA",
+     "note": "Financial PII law"
+    }
+   ],
+   "edge": "PII is any identifying data; PHI is the health-related subset."
+  },
+  "mnemonic": {
+   "phrase": "Personal Identity Information",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Personal"
+    },
+    {
+     "letter": "I",
+     "word": "Identity"
+    },
+    {
+     "letter": "I",
+     "word": "Information"
+    }
+   ]
+  }
+ },
+ "PHI": {
+  "analogy": "Your medical chart — anything linking your name to your diagnosis or treatment.",
+  "contrast": {
+   "headline": "Health data tied to people",
+   "vs": [
+    {
+     "id": "HIPAA",
+     "note": "Law protecting PHI"
+    },
+    {
+     "id": "PII",
+     "note": "Broader category"
+    }
+   ],
+   "edge": "PHI is health data linked to an identity and regulated under HIPAA in the US."
+  },
+  "mnemonic": {
+   "phrase": "Protected Health Information",
+   "breakdown": [
+    {
+     "letter": "P",
+     "word": "Protected"
+    },
+    {
+     "letter": "H",
+     "word": "Health"
+    },
+    {
+     "letter": "I",
+     "word": "Information"
+    }
+   ]
+  }
+ },
+ "GDPR": {
+  "analogy": "Europe's privacy rulebook that follows EU residents' data wherever in the world it travels.",
+  "contrast": {
+   "headline": "EU personal data regulation",
+   "vs": [
+    {
+     "id": "PII",
+     "note": "Data it protects"
+    }
+   ],
+   "edge": "GDPR applies to any organization processing EU residents' data, with heavy fines."
+  },
+  "mnemonic": {
+   "phrase": "Guarding Data Privacy Rights",
+   "breakdown": [
+    {
+     "letter": "G",
+     "word": "Guarding"
+    },
+    {
+     "letter": "D",
+     "word": "Data"
+    },
+    {
+     "letter": "P",
+     "word": "Privacy"
+    },
+    {
+     "letter": "R",
+     "word": "Rights"
+    }
+   ]
+  }
+ },
+ "HIPAA": {
+  "analogy": "The US rulebook that keeps your doctor's files locked and tells clinics how to share them.",
+  "contrast": {
+   "headline": "US health data privacy law",
+   "vs": [
+    {
+     "id": "PII",
+     "note": "Broader personal data"
+    },
+    {
+     "id": "PHI",
+     "note": "Data it protects"
+    }
+   ],
+   "edge": "HIPAA governs US healthcare providers, insurers and their business associates."
+  },
+  "mnemonic": {
+   "phrase": "Health Information Privacy And Accountability",
+   "breakdown": [
+    {
+     "letter": "H",
+     "word": "Health"
+    },
+    {
+     "letter": "I",
+     "word": "Information"
+    },
+    {
+     "letter": "P",
+     "word": "Privacy"
+    },
+    {
+     "letter": "A",
+     "word": "And"
+    },
+    {
+     "letter": "A",
+     "word": "Accountability"
+    }
+   ]
+  }
+ },
+ "NIST": {
+  "analogy": "The national cookbook of security recipes that much of the industry follows.",
+  "contrast": {
+   "headline": "US cybersecurity standards body",
+   "vs": [
+    {
+     "id": "GRC",
+     "note": "Frameworks used in GRC"
+    },
+    {
+     "id": "NVD",
+     "note": "Database NIST runs"
+    },
+    {
+     "id": "ISO",
+     "note": "International counterpart"
+    },
+    {
+     "id": "SCAP",
+     "note": "Protocol NIST maintains"
+    }
+   ],
+   "edge": "NIST publishes the CSF and SP 800 series; it is a US federal agency."
+  },
+  "mnemonic": {
+   "phrase": "National Institute Standards Technology",
+   "breakdown": [
+    {
+     "letter": "N",
+     "word": "National"
+    },
+    {
+     "letter": "I",
+     "word": "Institute"
+    },
+    {
+     "letter": "S",
+     "word": "Standards"
+    },
+    {
+     "letter": "T",
+     "word": "Technology"
+    }
+   ]
+  }
+ },
+ "SOW": {
+  "analogy": "A contractor's job sheet listing exactly what gets built, by when, and what done looks like.",
+  "contrast": {
+   "headline": "Scope of a specific project",
+   "vs": [
+    {
+     "id": "SLA",
+     "note": "Defines service levels"
+    },
+    {
+     "id": "BPA",
+     "note": "Partnership terms"
+    },
+    {
+     "id": "MSA",
+     "note": "Umbrella contract"
+    }
+   ],
+   "edge": "An SOW details one project under the broader terms of an MSA."
+  },
+  "mnemonic": {
+   "phrase": "Statement Of Work",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Statement"
+    },
+    {
+     "letter": "O",
+     "word": "Of"
+    },
+    {
+     "letter": "W",
+     "word": "Work"
+    }
+   ]
+  }
+ },
+ "COOP": {
+  "analogy": "The government's plan to keep essential services running even if headquarters is unusable.",
+  "contrast": {
+   "headline": "Essential functions during crisis",
+   "vs": [
+    {
+     "id": "BCP",
+     "note": "Private-sector equivalent"
+    },
+    {
+     "id": "DRP",
+     "note": "IT recovery plan"
+    }
+   ],
+   "edge": "COOP is the government term for continuity planning of essential functions."
+  },
+  "mnemonic": {
+   "phrase": "Continuity Of Operations Plan",
+   "breakdown": [
+    {
+     "letter": "C",
+     "word": "Continuity"
+    },
+    {
+     "letter": "O",
+     "word": "Of"
+    },
+    {
+     "letter": "O",
+     "word": "Operations"
+    },
+    {
+     "letter": "P",
+     "word": "Plan"
+    }
+   ]
+  }
+ },
+ "MTTF": {
+  "analogy": "The average lifespan of a light bulb you'll throw away, not fix, when it dies.",
+  "contrast": {
+   "headline": "Lifespan of non-repairable items",
+   "vs": [
+    {
+     "id": "MTBF",
+     "note": "For repairable systems"
+    }
+   ],
+   "edge": "MTTF applies to items replaced, not repaired, after failing."
+  },
+  "mnemonic": {
+   "phrase": "Mean Time To Failure",
+   "breakdown": [
+    {
+     "letter": "M",
+     "word": "Mean"
+    },
+    {
+     "letter": "T",
+     "word": "Time"
+    },
+    {
+     "letter": "T",
+     "word": "To"
+    },
+    {
+     "letter": "F",
+     "word": "Failure"
+    }
+   ]
+  }
+ },
+ "MTTR": {
+  "analogy": "The average time the mechanic needs to get your car back on the road.",
+  "contrast": {
+   "headline": "Average time to restore",
+   "vs": [
+    {
+     "id": "MTBF",
+     "note": "Time between failures"
+    },
+    {
+     "id": "RTO",
+     "note": "Target MTTR must meet"
+    }
+   ],
+   "edge": "Lower MTTR means faster recovery and helps meet the RTO."
+  },
+  "mnemonic": {
+   "phrase": "Mean Time To Repair",
+   "breakdown": [
+    {
+     "letter": "M",
+     "word": "Mean"
+    },
+    {
+     "letter": "T",
+     "word": "Time"
+    },
+    {
+     "letter": "T",
+     "word": "To"
+    },
+    {
+     "letter": "R",
+     "word": "Repair"
+    }
+   ]
+  }
+ },
+ "MTBF": {
+  "analogy": "How many miles your car usually drives between trips to the repair shop.",
+  "contrast": {
+   "headline": "Average uptime between failures",
+   "vs": [
+    {
+     "id": "MTTF",
+     "note": "Non-repairable counterpart"
+    },
+    {
+     "id": "MTTR",
+     "note": "Repair duration"
+    },
+    {
+     "id": "BCP",
+     "note": "Uses reliability metrics"
+    }
+   ],
+   "edge": "Higher MTBF means more reliable repairable systems."
+  },
+  "mnemonic": {
+   "phrase": "Mean Time Between Failures",
+   "breakdown": [
+    {
+     "letter": "M",
+     "word": "Mean"
+    },
+    {
+     "letter": "T",
+     "word": "Time"
+    },
+    {
+     "letter": "B",
+     "word": "Between"
+    },
+    {
+     "letter": "F",
+     "word": "Failures"
+    }
+   ]
+  }
+ },
+ "MOU": {
+  "analogy": "A handshake on paper: both sides agree on intentions, but no court will enforce it.",
+  "contrast": {
+   "headline": "Non-binding statement of intent",
+   "vs": [
+    {
+     "id": "SLA",
+     "note": "Enforceable service terms"
+    },
+    {
+     "id": "BPA",
+     "note": "Binding partnership"
+    }
+   ],
+   "edge": "An MOU signals cooperation without legal obligations, unlike an SLA or BPA."
+  },
+  "mnemonic": {
+   "phrase": "Mutual Outline Understanding",
+   "breakdown": [
+    {
+     "letter": "M",
+     "word": "Mutual"
+    },
+    {
+     "letter": "O",
+     "word": "Outline"
+    },
+    {
+     "letter": "U",
+     "word": "Understanding"
+    }
+   ]
+  }
+ },
+ "ARO": {
+  "analogy": "How many times a year you expect the basement to flood.",
+  "contrast": {
+   "headline": "Yearly incident frequency",
+   "vs": [
+    {
+     "id": "ALE",
+     "note": "ARO times SLE"
+    },
+    {
+     "id": "SLE",
+     "note": "Cost per incident"
+    }
+   ],
+   "edge": "ARO is a frequency, e.g. 0.5 for once every two years."
+  },
+  "mnemonic": {
+   "phrase": "Annual Rate Occurrence",
+   "breakdown": [
+    {
+     "letter": "A",
+     "word": "Annual"
+    },
+    {
+     "letter": "R",
+     "word": "Rate"
+    },
+    {
+     "letter": "O",
+     "word": "Occurrence"
+    }
+   ]
+  }
+ },
+ "ALE": {
+  "analogy": "The yearly flood budget: what one flood costs multiplied by how often floods happen.",
+  "contrast": {
+   "headline": "Expected yearly loss",
+   "vs": [
+    {
+     "id": "ARO",
+     "note": "Frequency input"
+    },
+    {
+     "id": "SLE",
+     "note": "Per-incident cost input"
+    },
+    {
+     "id": "GRC",
+     "note": "Risk decisions use it"
+    },
+    {
+     "id": "BCP",
+     "note": "Justifies continuity spend"
+    }
+   ],
+   "edge": "ALE = SLE × ARO; spending more than ALE on a control rarely makes sense."
+  },
+  "mnemonic": {
+   "phrase": "Annual Loss Expectancy",
+   "breakdown": [
+    {
+     "letter": "A",
+     "word": "Annual"
+    },
+    {
+     "letter": "L",
+     "word": "Loss"
+    },
+    {
+     "letter": "E",
+     "word": "Expectancy"
+    }
+   ]
+  }
+ },
+ "SLE": {
+  "analogy": "The repair bill from one single basement flood.",
+  "contrast": {
+   "headline": "Cost of one incident",
+   "vs": [
+    {
+     "id": "ALE",
+     "note": "Yearly total"
+    },
+    {
+     "id": "ARO",
+     "note": "Yearly frequency"
+    },
+    {
+     "id": "EF",
+     "note": "Percentage lost"
+    },
+    {
+     "id": "AV",
+     "note": "Asset worth"
+    }
+   ],
+   "edge": "SLE = AV × EF, the loss from one occurrence."
+  },
+  "mnemonic": {
+   "phrase": "Single Loss Expectancy",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Single"
+    },
+    {
+     "letter": "L",
+     "word": "Loss"
+    },
+    {
+     "letter": "E",
+     "word": "Expectancy"
+    }
+   ]
+  }
+ },
+ "AV": {
+  "analogy": "The price tag on what's at risk before anything bad happens.",
+  "contrast": {
+   "headline": "Monetary worth of asset",
+   "vs": [
+    {
+     "id": "SLE",
+     "note": "AV times EF"
+    }
+   ],
+   "edge": "AV is the starting point of quantitative risk math: SLE = AV × EF."
+  },
+  "mnemonic": {
+   "phrase": "Asset Value",
+   "breakdown": [
+    {
+     "letter": "A",
+     "word": "Asset"
+    },
+    {
+     "letter": "V",
+     "word": "Value"
+    }
+   ]
+  }
+ },
+ "BPA": {
+  "analogy": "The formal partnership contract spelling out who invests, who decides, and how profits split.",
+  "contrast": {
+   "headline": "Binding partnership terms",
+   "vs": [
+    {
+     "id": "MOU",
+     "note": "Non-binding precursor"
+    },
+    {
+     "id": "SLA",
+     "note": "Service performance terms"
+    },
+    {
+     "id": "SOW",
+     "note": "Project scope"
+    },
+    {
+     "id": "MSA",
+     "note": "Umbrella contract"
+    }
+   ],
+   "edge": "A BPA defines the partnership itself, including roles, profits and responsibilities."
+  },
+  "mnemonic": {
+   "phrase": "Business Partnership Agreement",
+   "breakdown": [
+    {
+     "letter": "B",
+     "word": "Business"
+    },
+    {
+     "letter": "P",
+     "word": "Partnership"
+    },
+    {
+     "letter": "A",
+     "word": "Agreement"
+    }
+   ]
+  }
+ },
+ "MSA": {
+  "analogy": "The umbrella contract signed once, so each new project needs only a short SOW.",
+  "contrast": {
+   "headline": "Umbrella terms for future work",
+   "vs": [
+    {
+     "id": "SLA",
+     "note": "Service levels detail"
+    },
+    {
+     "id": "SOW",
+     "note": "Per-project scope"
+    },
+    {
+     "id": "BPA",
+     "note": "Partnership contract"
+    }
+   ],
+   "edge": "An MSA sets general terms once; SOWs then define each project."
+  },
+  "mnemonic": {
+   "phrase": "Master Service Agreement",
+   "breakdown": [
+    {
+     "letter": "M",
+     "word": "Master"
+    },
+    {
+     "letter": "S",
+     "word": "Service"
+    },
+    {
+     "letter": "A",
+     "word": "Agreement"
+    }
+   ]
+  }
+ },
+ "TOCTOU": {
+  "analogy": "Checking a concert ticket at the gate, then someone swaps it before the scanner reads it.",
+  "contrast": {
+   "headline": "Race between check and use",
+   "vs": [
+    {
+     "id": "CVE",
+     "note": "Tracked as vulnerabilities"
+    },
+    {
+     "id": "MITM",
+     "note": "Interception, not race"
+    }
+   ],
+   "edge": "TOCTOU exploits the gap after a check; atomic operations and locking close it."
+  },
+  "mnemonic": {
+   "phrase": "Time Of Check Then Others Use",
+   "breakdown": [
+    {
+     "letter": "T",
+     "word": "Time"
+    },
+    {
+     "letter": "O",
+     "word": "Of"
+    },
+    {
+     "letter": "C",
+     "word": "Check"
+    },
+    {
+     "letter": "T",
+     "word": "Then"
+    },
+    {
+     "letter": "O",
+     "word": "Others"
+    },
+    {
+     "letter": "U",
+     "word": "Use"
+    }
+   ]
+  }
+ },
+ "SLA": {
+  "analogy": "A pizza promise: delivered in 30 minutes or there's a penalty.",
+  "contrast": {
+   "headline": "Contracted service performance levels",
+   "vs": [
+    {
+     "id": "SOW",
+     "note": "Project deliverables"
+    },
+    {
+     "id": "RTO",
+     "note": "Recovery commitments"
+    },
+    {
+     "id": "RPO",
+     "note": "Data loss commitments"
+    },
+    {
+     "id": "MOU",
+     "note": "Non-binding agreement"
+    }
+   ],
+   "edge": "An SLA defines measurable uptime and response targets with penalties if missed."
+  },
+  "mnemonic": {
+   "phrase": "Service Level Agreement",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Service"
+    },
+    {
+     "letter": "L",
+     "word": "Level"
+    },
+    {
+     "letter": "A",
+     "word": "Agreement"
+    }
+   ]
+  }
+ },
+ "BIA": {
+  "analogy": "Asking each department: if your systems vanished today, what would it cost and how fast must they return?",
+  "contrast": {
+   "headline": "Measures disruption impact",
+   "vs": [
+    {
+     "id": "BCP",
+     "note": "Built on BIA"
+    },
+    {
+     "id": "DRP",
+     "note": "Prioritized by BIA"
+    },
+    {
+     "id": "RPO",
+     "note": "Set during BIA"
+    },
+    {
+     "id": "RTO",
+     "note": "Set during BIA"
+    }
+   ],
+   "edge": "The BIA identifies critical functions and sets RTO and RPO for continuity plans."
+  },
+  "mnemonic": {
+   "phrase": "Business Impact Analysis",
+   "breakdown": [
+    {
+     "letter": "B",
+     "word": "Business"
+    },
+    {
+     "letter": "I",
+     "word": "Impact"
+    },
+    {
+     "letter": "A",
+     "word": "Analysis"
+    }
+   ]
+  }
+ },
+ "ISO": {
+  "analogy": "The international recipe book, with ISO 27001 being the certifiable recipe for an ISMS.",
+  "contrast": {
+   "headline": "International standards body",
+   "vs": [
+    {
+     "id": "GRC",
+     "note": "Compliance against ISO"
+    },
+    {
+     "id": "NIST",
+     "note": "US counterpart"
+    }
+   ],
+   "edge": "ISO 27001 can be certified; ISO 27002 provides the control guidance."
+  },
+  "mnemonic": {
+   "phrase": "International Standards Organization",
+   "breakdown": [
+    {
+     "letter": "I",
+     "word": "International"
+    },
+    {
+     "letter": "S",
+     "word": "Standards"
+    },
+    {
+     "letter": "O",
+     "word": "Organization"
+    }
+   ]
+  }
+ },
+ "EF": {
+  "analogy": "How much of the house a single fire actually burns — 30% of it, say.",
+  "contrast": {
+   "headline": "Percentage lost per incident",
+   "vs": [
+    {
+     "id": "SLE",
+     "note": "AV times EF"
+    },
+    {
+     "id": "ALE",
+     "note": "Built from SLE"
+    }
+   ],
+   "edge": "EF is a percentage of asset value lost in one incident."
+  },
+  "mnemonic": {
+   "phrase": "Exposure Fraction",
+   "breakdown": [
+    {
+     "letter": "E",
+     "word": "Exposure"
+    },
+    {
+     "letter": "F",
+     "word": "Fraction"
+    }
+   ]
+  }
+ },
+ "GLBA": {
+  "analogy": "The rulebook telling US banks and lenders to keep your financial details under lock.",
+  "contrast": {
+   "headline": "US financial privacy law",
+   "vs": [
+    {
+     "id": "GRC",
+     "note": "Compliance obligation"
+    },
+    {
+     "id": "PII",
+     "note": "Data it protects"
+    }
+   ],
+   "edge": "GLBA applies to US financial institutions and requires a written security program."
+  },
+  "mnemonic": {
+   "phrase": "Guarding Lenders Banking Accounts",
+   "breakdown": [
+    {
+     "letter": "G",
+     "word": "Guarding"
+    },
+    {
+     "letter": "L",
+     "word": "Lenders"
+    },
+    {
+     "letter": "B",
+     "word": "Banking"
+    },
+    {
+     "letter": "A",
+     "word": "Accounts"
+    }
+   ]
+  }
+ },
+ "EULA": {
+  "analogy": "The long legal fine print you scroll past and accept before installing an app.",
+  "contrast": {
+   "headline": "Software license terms",
+   "vs": [
+    {
+     "id": "AUP",
+     "note": "Organization's usage rules"
+    }
+   ],
+   "edge": "A EULA is the vendor's contract with users; an AUP is the employer's policy."
+  },
+  "mnemonic": {
+   "phrase": "End User License Agreement",
+   "breakdown": [
+    {
+     "letter": "E",
+     "word": "End"
+    },
+    {
+     "letter": "U",
+     "word": "User"
+    },
+    {
+     "letter": "L",
+     "word": "License"
+    },
+    {
+     "letter": "A",
+     "word": "Agreement"
+    }
+   ]
+  }
+ },
+ "AUP": {
+  "analogy": "The house rules every employee signs: what you may and may not do with company tech.",
+  "contrast": {
+   "headline": "Rules for using systems",
+   "vs": [
+    {
+     "id": "EULA",
+     "note": "Vendor license terms"
+    },
+    {
+     "id": "GRC",
+     "note": "Policy framework"
+    }
+   ],
+   "edge": "An AUP sets user behavior expectations and supports disciplinary action."
+  },
+  "mnemonic": {
+   "phrase": "Acceptable Use Policy",
+   "breakdown": [
+    {
+     "letter": "A",
+     "word": "Acceptable"
+    },
+    {
+     "letter": "U",
+     "word": "Use"
+    },
+    {
+     "letter": "P",
+     "word": "Policy"
+    }
+   ]
+  }
+ },
+ "SIEM": {
+  "analogy": "A detective's evidence board pinning together clues from every camera, door log and alarm in the building.",
+  "contrast": {
+   "headline": "Centralized log correlation",
+   "vs": [
+    {
+     "id": "IDS",
+     "note": "Feeds it alerts"
+    },
+    {
+     "id": "IoC",
+     "note": "Matches against IoCs"
+    },
+    {
+     "id": "DLP",
+     "note": "Feeds it alerts"
+    },
+    {
+     "id": "SOC",
+     "note": "Team that uses it"
+    }
+   ],
+   "edge": "A SIEM collects and correlates; it detects but does not respond on its own."
+  },
+  "mnemonic": {
+   "phrase": "Security Information Event Management",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Security"
+    },
+    {
+     "letter": "I",
+     "word": "Information"
+    },
+    {
+     "letter": "E",
+     "word": "Event"
+    },
+    {
+     "letter": "M",
+     "word": "Management"
+    }
+   ]
+  }
+ },
+ "SOC": {
+  "analogy": "The 24/7 security control room where analysts watch the screens and respond to alarms.",
+  "contrast": {
+   "headline": "Team monitoring threats 24/7",
+   "vs": [
+    {
+     "id": "SIEM",
+     "note": "Main tool they use"
+    },
+    {
+     "id": "IR",
+     "note": "Process they run"
+    },
+    {
+     "id": "MSSP",
+     "note": "Outsourced SOC option"
+    },
+    {
+     "id": "AIS",
+     "note": "Threat feed they consume"
+    }
+   ],
+   "edge": "The SOC is people and process; SIEM and SOAR are their tools."
+  },
+  "mnemonic": {
+   "phrase": "Security Operations Center",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Security"
+    },
+    {
+     "letter": "O",
+     "word": "Operations"
+    },
+    {
+     "letter": "C",
+     "word": "Center"
+    }
+   ]
+  }
+ },
+ "SOAR": {
+  "analogy": "A robot assistant that runs the SOC's playbooks automatically the moment an alarm fires.",
+  "contrast": {
+   "headline": "Automated response playbooks",
+   "vs": [
+    {
+     "id": "SIEM",
+     "note": "Supplies the alerts"
+    },
+    {
+     "id": "IR",
+     "note": "Process it automates"
+    }
+   ],
+   "edge": "SOAR acts on alerts with automated playbooks; a SIEM only detects them."
+  },
+  "mnemonic": {
+   "phrase": "Security Orchestration Automation Response",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Security"
+    },
+    {
+     "letter": "O",
+     "word": "Orchestration"
+    },
+    {
+     "letter": "A",
+     "word": "Automation"
+    },
+    {
+     "letter": "R",
+     "word": "Response"
+    }
+   ]
+  }
+ },
+ "EDR": {
+  "analogy": "A flight recorder and bodyguard on every laptop, recording behavior and isolating the machine if needed.",
+  "contrast": {
+   "headline": "Endpoint behavior detection, response",
+   "vs": [
+    {
+     "id": "XDR",
+     "note": "Extends beyond endpoints"
+    },
+    {
+     "id": "SIEM",
+     "note": "Receives EDR telemetry"
+    }
+   ],
+   "edge": "EDR watches behavior on hosts and can isolate them, unlike signature-only antivirus."
+  },
+  "mnemonic": {
+   "phrase": "Endpoint Detection Response",
+   "breakdown": [
+    {
+     "letter": "E",
+     "word": "Endpoint"
+    },
+    {
+     "letter": "D",
+     "word": "Detection"
+    },
+    {
+     "letter": "R",
+     "word": "Response"
+    }
+   ]
+  }
+ },
+ "XDR": {
+  "analogy": "EDR's bodyguards linked by radio with guards at the email gateway, network and cloud.",
+  "contrast": {
+   "headline": "Correlated multi-domain detection",
+   "vs": [
+    {
+     "id": "EDR",
+     "note": "Endpoint-only predecessor"
+    },
+    {
+     "id": "SIEM",
+     "note": "Broader log platform"
+    }
+   ],
+   "edge": "XDR correlates endpoint, network, email and cloud telemetry in one vendor platform."
+  },
+  "mnemonic": {
+   "phrase": "Xray Detection Response",
+   "breakdown": [
+    {
+     "letter": "X",
+     "word": "Xray"
+    },
+    {
+     "letter": "D",
+     "word": "Detection"
+    },
+    {
+     "letter": "R",
+     "word": "Response"
+    }
+   ]
+  }
+ },
+ "IR": {
+  "analogy": "The fire department's drill: detect the smoke, contain the fire, put it out, then learn why it started.",
+  "contrast": {
+   "headline": "Structured breach handling",
+   "vs": [
+    {
+     "id": "SOAR",
+     "note": "Automates IR steps"
+    },
+    {
+     "id": "SOC",
+     "note": "Team running IR"
+    }
+   ],
+   "edge": "IR phases: preparation, detection, analysis, containment, eradication, recovery, lessons learned."
+  },
+  "mnemonic": {
+   "phrase": "Incident Response",
+   "breakdown": [
+    {
+     "letter": "I",
+     "word": "Incident"
+    },
+    {
+     "letter": "R",
+     "word": "Response"
+    }
+   ]
+  }
+ },
+ "UEBA": {
+  "analogy": "A guard who knows everyone's routine and notices when the accountant logs in at 3 AM from abroad.",
+  "contrast": {
+   "headline": "Baselines and flags anomalies",
+   "vs": [
+    {
+     "id": "SIEM",
+     "note": "Often bundles UEBA"
+    }
+   ],
+   "edge": "UEBA learns normal behavior and flags deviations, catching insiders and stolen accounts."
+  },
+  "mnemonic": {
+   "phrase": "Unusual Employee Behavior Alerts",
+   "breakdown": [
+    {
+     "letter": "U",
+     "word": "Unusual"
+    },
+    {
+     "letter": "E",
+     "word": "Employee"
+    },
+    {
+     "letter": "B",
+     "word": "Behavior"
+    },
+    {
+     "letter": "A",
+     "word": "Alerts"
+    }
+   ]
+  }
+ },
+ "AIS": {
+  "analogy": "A neighborhood watch group text, where organizations instantly share descriptions of new burglars.",
+  "contrast": {
+   "headline": "CISA automated indicator sharing",
+   "vs": [
+    {
+     "id": "IoC",
+     "note": "What gets shared"
+    },
+    {
+     "id": "SIEM",
+     "note": "Consumes the feed"
+    },
+    {
+     "id": "SOC",
+     "note": "Acts on indicators"
+    },
+    {
+     "id": "TAXII",
+     "note": "Transport AIS uses"
+    }
+   ],
+   "edge": "AIS is CISA's free program, built on STIX and TAXII."
+  },
+  "mnemonic": {
+   "phrase": "Automated Indicator Sharing",
+   "breakdown": [
+    {
+     "letter": "A",
+     "word": "Automated"
+    },
+    {
+     "letter": "I",
+     "word": "Indicator"
+    },
+    {
+     "letter": "S",
+     "word": "Sharing"
+    }
+   ]
+  }
+ },
+ "TAXII": {
+  "analogy": "The delivery truck carrying threat-intel packages between organizations over HTTPS.",
+  "contrast": {
+   "headline": "Transport for threat intel",
+   "vs": [
+    {
+     "id": "STIX",
+     "note": "Format it carries"
+    },
+    {
+     "id": "AIS",
+     "note": "Program using TAXII"
+    }
+   ],
+   "edge": "TAXII moves the intel; STIX is the language the intel is written in."
+  },
+  "mnemonic": {
+   "phrase": "Threats Are Xchanged In Intelligence",
+   "breakdown": [
+    {
+     "letter": "T",
+     "word": "Threats"
+    },
+    {
+     "letter": "A",
+     "word": "Are"
+    },
+    {
+     "letter": "X",
+     "word": "Xchanged"
+    },
+    {
+     "letter": "I",
+     "word": "In"
+    },
+    {
+     "letter": "I",
+     "word": "Intelligence"
+    }
+   ]
+  }
+ },
+ "STIX": {
+  "analogy": "A common language for describing attackers, so every organization's intel reads the same way.",
+  "contrast": {
+   "headline": "Threat intel description format",
+   "vs": [
+    {
+     "id": "TAXII",
+     "note": "Transport for STIX"
+    },
+    {
+     "id": "IoC",
+     "note": "Expressed in STIX"
+    }
+   ],
+   "edge": "STIX describes threat intelligence; TAXII is how it is shared."
+  },
+  "mnemonic": {
+   "phrase": "Structured Threat Intel Xpression",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Structured"
+    },
+    {
+     "letter": "T",
+     "word": "Threat"
+    },
+    {
+     "letter": "I",
+     "word": "Intel"
+    },
+    {
+     "letter": "X",
+     "word": "Xpression"
+    }
+   ]
+  }
+ },
+ "NVD": {
+  "analogy": "The library catalog that takes each CVE ID and adds severity scores, product lists and fix notes.",
+  "contrast": {
+   "headline": "NIST-enriched CVE database",
+   "vs": [
+    {
+     "id": "CVE",
+     "note": "IDs it enriches"
+    },
+    {
+     "id": "CVSS",
+     "note": "Scores it adds"
+    },
+    {
+     "id": "NIST",
+     "note": "Agency that runs it"
+    }
+   ],
+   "edge": "CVE names the flaw; the NVD adds CVSS scores and affected product details."
+  },
+  "mnemonic": {
+   "phrase": "National Vulnerability Database",
+   "breakdown": [
+    {
+     "letter": "N",
+     "word": "National"
+    },
+    {
+     "letter": "V",
+     "word": "Vulnerability"
+    },
+    {
+     "letter": "D",
+     "word": "Database"
+    }
+   ]
+  }
+ },
+ "VM": {
+  "analogy": "An apartment inside a building: a full home that shares the building's foundation and plumbing.",
+  "contrast": {
+   "headline": "Software-emulated computer",
+   "vs": [
+    {
+     "id": "VDI",
+     "note": "Desktops built on VMs"
+    },
+    {
+     "id": "IaaS",
+     "note": "Cloud VMs on demand"
+    }
+   ],
+   "edge": "VMs share a hypervisor, so VM escape is the key isolation risk."
+  },
+  "mnemonic": {
+   "phrase": "Virtual Machine",
+   "breakdown": [
+    {
+     "letter": "V",
+     "word": "Virtual"
+    },
+    {
+     "letter": "M",
+     "word": "Machine"
+    }
+   ]
+  }
+ },
+ "VDI": {
+  "analogy": "Your desk lives in the data center; your laptop is just a window onto it.",
+  "contrast": {
+   "headline": "Centrally hosted desktops",
+   "vs": [
+    {
+     "id": "VM",
+     "note": "Each desktop is a VM"
+    }
+   ],
+   "edge": "VDI keeps data in the data center, so a lost laptop leaks nothing."
+  },
+  "mnemonic": {
+   "phrase": "Virtual Desktop Infrastructure",
+   "breakdown": [
+    {
+     "letter": "V",
+     "word": "Virtual"
+    },
+    {
+     "letter": "D",
+     "word": "Desktop"
+    },
+    {
+     "letter": "I",
+     "word": "Infrastructure"
+    }
+   ]
+  }
+ },
+ "IaaS": {
+  "analogy": "Renting empty land with utilities hooked up — you build and maintain everything on it.",
+  "contrast": {
+   "headline": "Rented compute, storage, network",
+   "vs": [
+    {
+     "id": "VM",
+     "note": "What you rent"
+    },
+    {
+     "id": "CASB",
+     "note": "Monitors cloud usage"
+    },
+    {
+     "id": "PaaS",
+     "note": "Provider manages more"
+    }
+   ],
+   "edge": "In IaaS you patch the OS and apps; the provider secures the hardware."
+  },
+  "mnemonic": {
+   "phrase": "Infrastructure as a Service",
+   "breakdown": [
+    {
+     "letter": "I",
+     "word": "Infrastructure"
+    },
+    {
+     "letter": "A",
+     "word": "as"
+    },
+    {
+     "letter": "A",
+     "word": "a"
+    },
+    {
+     "letter": "S",
+     "word": "Service"
+    }
+   ]
+  }
+ },
+ "SaaS": {
+  "analogy": "Eating at a restaurant: you just order, the kitchen and dishes are someone else's problem.",
+  "contrast": {
+   "headline": "Subscription software via browser",
+   "vs": [
+    {
+     "id": "CASB",
+     "note": "Controls SaaS use"
+    },
+    {
+     "id": "PaaS",
+     "note": "You manage more"
+    }
+   ],
+   "edge": "In SaaS you still own your data, user access and configuration."
+  },
+  "mnemonic": {
+   "phrase": "Software as a Service",
+   "breakdown": [
+    {
+     "letter": "S",
+     "word": "Software"
+    },
+    {
+     "letter": "A",
+     "word": "as"
+    },
+    {
+     "letter": "A",
+     "word": "a"
+    },
+    {
+     "letter": "S",
+     "word": "Service"
+    }
+   ]
+  }
+ },
+ "CASB": {
+  "analogy": "A chaperone standing between employees and cloud apps, enforcing company rules on what's shared.",
+  "contrast": {
+   "headline": "Policy broker for cloud apps",
+   "vs": [
+    {
+     "id": "SaaS",
+     "note": "Apps it governs"
+    },
+    {
+     "id": "IaaS",
+     "note": "Cloud it monitors"
+    },
+    {
+     "id": "SASE",
+     "note": "Framework including CASB"
+    }
+   ],
+   "edge": "A CASB brings visibility and DLP to cloud apps, including unsanctioned shadow IT."
+  },
+  "mnemonic": {
+   "phrase": "Cloud Access Security Broker",
+   "breakdown": [
+    {
+     "letter": "C",
+     "word": "Cloud"
+    },
+    {
+     "letter": "A",
+     "word": "Access"
+    },
+    {
+     "letter": "S",
+     "word": "Security"
+    },
+    {
+     "letter": "B",
+     "word": "Broker"
+    }
+   ]
+  }
+ },
+ "MSSP": {
+  "analogy": "Hiring a professional security company to guard your building instead of training your own guards.",
+  "contrast": {
+   "headline": "Outsourced security operations",
+   "vs": [
+    {
+     "id": "SOC",
+     "note": "Service it provides"
+    },
+    {
+     "id": "SIEM",
+     "note": "Platform it often runs"
+    }
+   ],
+   "edge": "An MSSP delivers SOC-style monitoring as a service; accountability still stays with you."
+  },
+  "mnemonic": {
+   "phrase": "Managed Security Service Provider",
+   "breakdown": [
+    {
+     "letter": "M",
+     "word": "Managed"
+    },
+    {
+     "letter": "S",
+     "word": "Security"
+    },
+    {
+     "letter": "S",
+     "word": "Service"
+    },
+    {
+     "letter": "P",
+     "word": "Provider"
+    }
+   ]
+  }
+ },
+ "L7": {
+  "analogy": "The front desk you actually talk to — web pages, email, and DNS lookups live here.",
+  "contrast": {
+   "headline": "User-facing application protocols",
+   "vs": [
+    {
+     "id": "L6",
+     "note": "Formats data below"
+    },
+    {
+     "id": "HTTPS",
+     "note": "Lives at Layer 7"
+    },
+    {
+     "id": "SSH",
+     "note": "Lives at Layer 7"
+    },
+    {
+     "id": "LDAP",
+     "note": "Lives at Layer 7"
+    }
+   ],
+   "edge": "Layer 7 is where WAFs, proxies and most attacks against apps operate."
+  },
+  "mnemonic": {
+   "phrase": "Layer 7",
+   "breakdown": [
+    {
+     "letter": "L",
+     "word": "Layer"
+    },
+    {
+     "letter": "7",
+     "word": "7"
+    }
+   ]
+  }
+ },
+ "L6": {
+  "analogy": "The translator and envelope-sealer, handling encoding, compression and encryption.",
+  "contrast": {
+   "headline": "Formatting, encryption, encoding",
+   "vs": [
+    {
+     "id": "L7",
+     "note": "Application above"
+    },
+    {
+     "id": "L5",
+     "note": "Session below"
+    },
+    {
+     "id": "TLS",
+     "note": "Often mapped here"
+    },
+    {
+     "id": "TTLS",
+     "note": "Tunneled TLS method"
+    }
+   ],
+   "edge": "Layer 6 converts data formats; TLS is commonly mapped here for the exam."
+  },
+  "mnemonic": {
+   "phrase": "Layer 6",
+   "breakdown": [
+    {
+     "letter": "L",
+     "word": "Layer"
+    },
+    {
+     "letter": "6",
+     "word": "6"
+    }
+   ]
+  }
+ },
+ "L5": {
+  "analogy": "The meeting organizer who opens, keeps alive, and closes the conversation between apps.",
+  "contrast": {
+   "headline": "Manages application sessions",
+   "vs": [
+    {
+     "id": "L6",
+     "note": "Presentation above"
+    },
+    {
+     "id": "L4",
+     "note": "Transport below"
+    },
+    {
+     "id": "PPTP",
+     "note": "Session-layer protocol"
+    },
+    {
+     "id": "NetBIOS",
+     "note": "Session-layer service"
+    }
+   ],
+   "edge": "Layer 5 manages sessions; it is where session hijacking concepts live."
+  },
+  "mnemonic": {
+   "phrase": "Layer 5",
+   "breakdown": [
+    {
+     "letter": "L",
+     "word": "Layer"
+    },
+    {
+     "letter": "5",
+     "word": "5"
+    }
+   ]
+  }
+ },
+ "L4": {
+  "analogy": "The shipping department choosing registered mail (TCP) or quick postcards (UDP) and labeling the door number.",
+  "contrast": {
+   "headline": "End-to-end delivery and ports",
+   "vs": [
+    {
+     "id": "L5",
+     "note": "Session above"
+    },
+    {
+     "id": "L3",
+     "note": "Network below"
+    },
+    {
+     "id": "TCP",
+     "note": "Reliable transport"
+    },
+    {
+     "id": "UDP",
+     "note": "Fast transport"
+    }
+   ],
+   "edge": "Layer 4 adds ports and reliability; stateful firewalls track it."
+  },
+  "mnemonic": {
+   "phrase": "Layer 4",
+   "breakdown": [
+    {
+     "letter": "L",
+     "word": "Layer"
+    },
+    {
+     "letter": "4",
+     "word": "4"
+    }
+   ]
+  }
+ },
+ "L3": {
+  "analogy": "The postal routing system, reading IP addresses to move packets between cities.",
+  "contrast": {
+   "headline": "IP routing and addressing",
+   "vs": [
+    {
+     "id": "L4",
+     "note": "Transport above"
+    },
+    {
+     "id": "L2",
+     "note": "Data link below"
+    },
+    {
+     "id": "IPSec",
+     "note": "Secures Layer 3"
+    },
+    {
+     "id": "NAT",
+     "note": "Rewrites L3 addresses"
+    }
+   ],
+   "edge": "Layer 3 routes between networks; routers and IP addresses live here."
+  },
+  "mnemonic": {
+   "phrase": "Layer 3",
+   "breakdown": [
+    {
+     "letter": "L",
+     "word": "Layer"
+    },
+    {
+     "letter": "3",
+     "word": "3"
+    }
+   ]
+  }
+ },
+ "L2": {
+  "analogy": "The hallway mail carrier in one building, delivering by MAC address door to door.",
+  "contrast": {
+   "headline": "MAC addressing and switching",
+   "vs": [
+    {
+     "id": "L3",
+     "note": "Network above"
+    },
+    {
+     "id": "L1",
+     "note": "Physical below"
+    },
+    {
+     "id": "VLAN",
+     "note": "Segments Layer 2"
+    },
+    {
+     "id": "WPA2",
+     "note": "Encrypts Wi-Fi frames"
+    }
+   ],
+   "edge": "Layer 2 moves frames locally; ARP spoofing and VLAN hopping attack here."
+  },
+  "mnemonic": {
+   "phrase": "Layer 2",
+   "breakdown": [
+    {
+     "letter": "L",
+     "word": "Layer"
+    },
+    {
+     "letter": "2",
+     "word": "2"
+    }
+   ]
+  }
+ },
+ "L1": {
+  "analogy": "The roads themselves — copper, fiber and radio waves carrying raw bits.",
+  "contrast": {
+   "headline": "Cables, signals, radio",
+   "vs": [
+    {
+     "id": "L2",
+     "note": "Data link above"
+    }
+   ],
+   "edge": "Layer 1 attacks are physical: wiretaps, jamming, cut cables."
+  },
+  "mnemonic": {
+   "phrase": "Layer 1",
+   "breakdown": [
+    {
+     "letter": "L",
+     "word": "Layer"
+    },
+    {
+     "letter": "1",
+     "word": "1"
+    }
+   ]
+  }
+ }
+}
